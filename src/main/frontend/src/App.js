@@ -6,9 +6,12 @@ function App() {
   const [hello, setHello] = useState('');
 
   useEffect(() => {
-    client.get('/main')
-    .then((res) => setHello(res.data))
-    .catch((err) => console.log(err))
+    console.log("start")
+    client.get('/api/main').then((res) => {
+      console.log(res.data.msg)
+      setHello(res.data.msg)
+    }).catch((err) => console.log(err))
+
   },[])
   
   return (

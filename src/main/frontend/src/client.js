@@ -5,7 +5,7 @@ const client = axios.create({
   headers:{
     "Content-Type":"application/*; charset=UTF-8",
     "Accept": "*/*",
-    
+
   },
 });
 
