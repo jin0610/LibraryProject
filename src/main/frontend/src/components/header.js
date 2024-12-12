@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/header.css";
 
-const Header = () => {
+const header = () => {
     
     return(
         <div class="navbar bg-dark fixed-top">
@@ -14,4 +14,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default header;

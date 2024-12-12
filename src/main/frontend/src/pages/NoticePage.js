@@ -1,8 +1,7 @@
 import React from "react";
-import {useEffect, useState} from "react";
-import client from "../client";
 import Header from "../components/header";
-import PageBlock from "../components/PageBlock";
+import PageBlock from "../components/pageBlock";
+import NoticeForm from "../components/noticeForm";
 
 
 const NoticePage = () =>{
@@ -10,6 +9,7 @@ const NoticePage = () =>{
     return(
         <PageBlock>
             <Header/>
+            <NoticeForm/>
         </PageBlock>
 
     )

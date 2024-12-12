@@ -1,21 +1,14 @@
-import {useEffect, useState} from "react";
-import client from "../client";
+import PageBlock from "../components/pageBlock";
+import Header from "../components/header";
+
 
 const MainPage = () =>{
-    const [hello, setHello] = useState('');
+    
 
-    useEffect(() => {
-        console.log("start")
-        client.get('/api/main').then((res) => {
-        console.log(res.data.msg)
-        setHello(res.data.msg)
-        }).catch((err) => console.log(err))
-
-    },[])
     return(
-        <div>
-            백엔드 데이터 : {hello}
-        </div>
+        <PageBlock>
+            <Header/>
+        </PageBlock>
     )
 }
 

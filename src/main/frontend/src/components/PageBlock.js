@@ -1,4 +1,4 @@
-const PageBlock = ({children}) =>{
+const pageBlock = ({children}) =>{
     const mainback = {
         position:"absolute",
         left:"0",
@@ -10,4 +10,4 @@ const PageBlock = ({children}) =>{
     return <div style={mainback}>{children}</div>
 }
 
-export default PageBlock;
+export default pageBlock;
