@@ -1,23 +1,17 @@
-import {useEffect, useState} from "react";
-import client from "./client";
-
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
+import MainPage from './pages/MainPage';
+import NoticePage from './pages/NoticePage';
 
 function App() {
-  const [hello, setHello] = useState('');
-
-  useEffect(() => {
-    console.log("start")
-    client.get('/api/main').then((res) => {
-      console.log(res.data.msg)
-      setHello(res.data.msg)
-    }).catch((err) => console.log(err))
-
-  },[])
   
   return (
-    <div>
-      백엔드 데이터 : {hello}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/notice' element={<NoticePage/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
