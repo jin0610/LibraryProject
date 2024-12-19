@@ -3,17 +3,57 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                             http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
-                            http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+                            http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <mvc:annotation-driven/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
-<!--        <property name="suffix" value=".jsp" />-->
+        <property name="suffix" value=".jsp" />
     </bean>
 
     <context:component-scan base-package="org.project.libraryProject.controller"/>
+
+    <!-- 데이터 소스 설정 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://mysql-library.duckdns.org:3306/library?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="username" value="user" />
+        <property name="password" value="1234" />
+    </bean>
+
+    <!-- JDBC Template 설정 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="org.project.libraryProject.entity" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+                <property name="generateDdl" value="true" />
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL8Dialect" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- Enable Annotation-driven Transaction Management -->
+    <tx:annotation-driven />
+
+    <!-- Optional: If using Spring Data JPA repositories -->
+    <context:component-scan base-package="org.project.libraryProject.repository"/>
+
+    <!-- Spring JavaConfig Application Configuration -->
+    <bean class="org.project.libraryProject.config.AppConfig"/>
 
 </beans>

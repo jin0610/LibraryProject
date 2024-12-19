@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 콘솔 로그 출력 설정 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 로그 레벨 설정 (root) -->
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
+    <!-- JDBC 관련 로그 레벨 설정 (DEBUG로 설정) -->
+    <logger name="org.springframework.jdbc.core" level="DEBUG"/>
+    <logger name="org.springframework.orm.jpa" level="DEBUG"/>
+
+    <!-- Hibernate 관련 로그 레벨 설정 -->
+    <logger name="org.hibernate" level="DEBUG"/>
+
+</configuration>
