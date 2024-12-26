@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/header";
-import PageBlock from "../components/pageBlock";
+import PageBlock from "../components/PageBlock";
 import NoticeForm from "../components/noticeForm";
 
 
