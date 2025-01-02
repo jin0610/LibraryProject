@@ -40,8 +40,8 @@ dependencies {
     implementation 'org.springframework:spring-web:5.3.6'
     implementation 'org.springframework:spring-aop:5.3.6'
 
-    implementation 'com.querydsl:querydsl-jpa:4.4.0'
-    annotationProcessor 'com.querydsl:querydsl-apt:4.4.0:jpa'
+    implementation 'com.querydsl:querydsl-jpa:5.0.0'
+    annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jpa'
 
     implementation 'org.jboss.logging:jboss-logging:3.3.2.Final'
 
@@ -70,11 +70,66 @@ tasks.withType(JavaCompile) {
 }
 
 war {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE  // 중복된 파일을 제외 (하나만 포함)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    webAppDirName = "src/main/webapp"
     from(configurations.runtimeClasspath) {
         into 'WEB-INF/lib'
     }
-    webAppDirName = 'src/main/webapp'
+//    destinationDirectory.set(file('D:/projects/file/apache-tomcat-9.0.68/apache-tomcat-9.0.68/webapps/exploded'))
+
+
+
+//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE  // 중복된 파일을 제외 (하나만 포함)
+//
+//    // `runtimeClasspath`에서 파일을 포함하여 `WEB-INF/lib`로 배치
+//    from(configurations.runtimeClasspath) {
+//        into 'WEB-INF/lib'
+//    }
+
+    // 웹 애플리케이션 파일을 `src/main/webapp` 디렉터리로 설정
+
+    // `src/main/webapp/WEB-INF/spring` 폴더를 `WEB-INF/spring`으로 복사
+//    from('src/main/webapp/WEB-INF/spring') {
+//        into 'WEB-INF/spring'
+//    }
+//
+//    // 톰캣의 webapps 디렉터리에 배포
+////    into file("$buildDir/libs/exploded/LibraryProject-1.0-SNAPSHOT")
+   // into '$buildDir/libs/exploded/' // $tomcatWebappsDir은 톰캣 webapps 경로
+//    into '$tomcatWebappsDir' // $tomcatWebappsDir은 톰캣 webapps 경로
+//
+//    archiveFileName = 'LibraryProject-1.0-SNAPSHOT.war'
+
+
+    //war 태스크의 into 설정은 출력 디렉토리가 아닌 소스 디렉토리를 설정하는 곳
+    //
+//    def tomcatWebappsDir = '/projects/file/apache-tomcat-9.0.68/apache-tomcat-9.0.68/webapps'
+//
+//    war {
+//        from('src/main/webapp')
+//        into tomcatWebappsDir  // 톰캣 webapps 경로 지정
+//    }
+
+//    def tomcatWebappsDir = file('D:/projects/file/apache-tomcat-9.0.68/apache-tomcat-9.0.68/webapps')
+//
+//    destinationDirectory.set(tomcatWebappsDir)
+//
+////    webAppDirName = "src/main/webapp"
+//    from('src/main/webapp') {
+//        include '**/*' // 모든 파일을 포함
+//        into '/' // root 위치에 복사
+//    }
+}
+
+tasks.named("war") {
+    destinationDirectory.set(file("D:/projects/file/apache-tomcat-9.0.68/apache-tomcat-9.0.68/webapps/exploded"))
+    dependsOn ":compileJava"
+}
+
+task explodedWar(type: Copy) {
+    dependsOn war
+    from(zipTree(war.archiveFile.get()))
+    into "D:/projects/file/apache-tomcat-9.0.68/apache-tomcat-9.0.68/webapps/exploded"
 }
 
 configurations.all {
