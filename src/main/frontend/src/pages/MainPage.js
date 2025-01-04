@@ -1,5 +1,5 @@
 import PageBlock from "../components/PageBlock";
-import Header from "../components/header";
+import Header from "../components/sample/Header";
 
 
 const MainPage = () =>{

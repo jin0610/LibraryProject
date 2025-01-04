@@ -1,0 +1,79 @@
+/* Header */
+header{
+    height:3.5em;
+    background : white;
+}
+
+header > nav{
+    background : white;
+}
+
+.header-title{
+    color: black;
+    font-size: 1.3em;
+    font-weight : 700;
+    text-decoration: none;
+}
+
+.header-title:focus, .header-title:hover{
+    color: black;
+    font-size: 1.3em;
+    font-weight : 700;
+    text-decoration: none;
+}
+
+.header-menu{
+    flex-grow : 0;
+}
+
+.header-menu-item{
+    padding : .25em .5em;
+}
+
+.header-menu-item > a{
+    color:black;
+    padding : .25em .5em;
+}
+
+.header-menu-item > a:hover{
+    color: rgba(0, 0, 0, 0.341);
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.header-nav-button {
+    color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+.header-nav-button > span {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.header-nav-button:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem;
+}
+
+/* 특정 해상도에서 요소 반응 */
+@media screen and (max-width: 455px) {
+    header {
+        height: 3.5em;
+    }
+    /* 로고 */
+    header > .navbar-brand {
+        font-size: 1.05em;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .header-menu-item{
+        padding : 0;
+    }
+
+    .header-menu-item > a{
+        padding : .3em 0em;
+        
+    }
+}
