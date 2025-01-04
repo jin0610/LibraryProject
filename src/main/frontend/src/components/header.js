@@ -4,13 +4,14 @@ import "./css/header.css";
 const header = () => {
     
     return(
-        <div class="navbar bg-dark fixed-top">
-            <div class="container">
-                {/* main-logo */}
-                <a class="navbar-brand"  href="/">동그라미</a>
-                <button type="button" class="btn btn-danger">danger</button>
-            </div>
-        </div>
+        <header class="mb-1">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container">
+                    {/* <제목 */}
+                    <a href="/sample.html" class="navbar-brand header-title">Sample Hompage</a>
+                </div>
+            </nav>
+        </header>
     )
 }
 

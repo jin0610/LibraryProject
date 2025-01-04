@@ -1,0 +1,49 @@
+/* Sidebar */
+.sidebar-card{
+    margin-top:2em;
+    margin-bottom: 2em;
+    border-radius: 0.25rem;
+}
+
+.sidebar-card > .card-header:not(:first-of-type){
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.sidebar-card > .card-header > .nav-link {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color : black;
+}
+
+.check-all{
+    text-decoration: none;
+    color : black;
+}
+
+.dropdown {
+    position: relative;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-list {
+    padding: 12px;
+    background: #fff;
+}
+
+.dropdown-option {
+    display: block;
+    padding: .2em .5em;
+}
+
+.dropdown-label {
+    display: block;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    line-height: 1;
+    cursor: pointer;
+}

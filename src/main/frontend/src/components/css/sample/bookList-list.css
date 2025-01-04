@@ -1,0 +1,28 @@
+/* BookList(List) */
+.bookList-list-body{
+    padding: 0.3rem 0.5rem;
+}
+
+.bookList-list-badge{
+    margin-left: .2em;
+    margin-top: -.2em;
+}
+
+.bookList-list-img{
+    max-height : 15em;
+    margin : 0.5em;
+}
+
+.bookList-list-img > a >img{
+    display:block;
+	width:auto;
+	max-height : 15em;
+    margin : 0.5em;
+}
+
+.bookList-list-btn{
+    display: inline-block;
+    margin:0;
+    padding:0;
+    font-size:1em;
+}

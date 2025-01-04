@@ -1,0 +1,11 @@
+/* BookList(Card) */ 
+/* BookList-Card ==> 수정 필요*/ 
+.booklist-card-image{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.booklist-card-image > a > img{ /* 카드형 책 목록 - card-img*/
+    margin : 0.5em;
+    max-height : 10em;
+    width: auto;    
+}

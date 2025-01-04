@@ -1,0 +1,15 @@
+/* Banner */
+.banner{
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1512847930783-39fdc971594b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fCVFQyVCMSU4NSVFQyU5RSVBNXxlbnwwfHwwfHx8MA%3D%3D');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.banner-title{
+    font-size:10em;
+    color: white;
+    margin: 2rem;
+}
