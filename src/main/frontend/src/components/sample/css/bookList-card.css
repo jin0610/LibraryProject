@@ -9,3 +9,26 @@
     max-height : 10em;
     width: auto;    
 }
+
+.booklist-card-Info{
+
+}
+
+.booklist-card-price-btn{
+   display:flex;
+   flex-wrap : inherit;
+   align-items : center;
+   justify-content: space-between;
+}
+
+.booklist-card-price, .booklist-card-btn-group{
+
+}
+
+
+
+.booklist-card-btn {
+    font-size: 1em;
+    align-items: center;
+    margin-left : .3em;
+}

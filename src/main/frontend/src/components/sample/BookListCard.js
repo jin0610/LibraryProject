@@ -22,31 +22,29 @@ const BookListCard = () => {
                                         </a>
                                     </div>
                                     {/* <!-- book Info --> */}
-                                    <div class="p-3">
+                                    <div class="p-3 booklist-card-Info-group">
                                         <h2 class="fs-6 text-decoration-none">
-                                            <a href="/book1" class="text-decoration-none text-inherit">
+                                            <a href="#!" class="text-decoration-none text-dark">
                                                 우연은 비켜 가지 않는다
                                             </a>
                                         </h2>
-                                        <div class="text-small">
-                                            <a href="#!" class="text-decoration-none text-muted"><samll>줄리언 반스 | 다산책방</samll></a>
+                                        <div class="text-small pb-2">
+                                            <a href="#!" class="text-decoration-none text-muted "><samll>줄리언 반스 | 다산책방</samll></a>
                                         </div>
-                                        <div class="d-flex justify-content-between align-items-center ">
-                                            <div>
+                                        <div class="booklist-card-price-btn">
+                                            <div class="booklist-card-price">
                                                 <span class="text-dark">
                                                     15,750원
                                                 </span>
                                             </div>
-                                            <div>
-                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm p-2 pb-1">
-                                                    <span class="material-symbols-outlined">
-                                                        favorite
+                                            <div class="booklist-card-btn-group">
+                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 booklist-card-btn">
+                                                    <span>
+                                                        <i class="bi bi-heart"></i>
                                                     </span>
                                                 </a>
-                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm p-2 pb-1">
-                                                    <span class="material-symbols-outlined">
-                                                        chat
-                                                    </span>
+                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 booklist-card-btn">
+                                                    <span><i class="bi bi-chat-left-dots-fill"></i></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -66,31 +64,29 @@ const BookListCard = () => {
                                         </a>
                                     </div>
                                     {/* <!-- book Info --> */}
-                                    <div class="p-3">
+                                    <div class="p-3 booklist-card-Info-group">
                                         <h2 class="fs-6 text-decoration-none">
-                                            <a href="/book1" class="text-decoration-none text-inherit ">
-                                                오늘 밤, 세계에서 이 사랑이 사라진다 해도
+                                            <a href="#!" class="text-decoration-none text-dark">
+                                                우연은 비켜 가지 않는다
                                             </a>
                                         </h2>
-                                        <div class="text-small">
-                                            <a href="#!" class="text-decoration-none text-muted"><samll>이치조 미사키 | 모모</samll></a>
+                                        <div class="text-small pb-2">
+                                            <a href="#!" class="text-decoration-none text-muted "><samll>줄리언 반스 | 다산책방</samll></a>
                                         </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
+                                        <div class="booklist-card-price-btn">
+                                            <div class="booklist-card-price">
                                                 <span class="text-dark">
-                                                    20,000원
+                                                    15,750원
                                                 </span>
                                             </div>
-                                            <div>
-                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm p-2 pb-1">
-                                                    <span class="material-symbols-outlined">
-                                                        favorite
+                                            <div class="booklist-card-btn-group">
+                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 booklist-card-btn">
+                                                    <span>
+                                                        <i class="bi bi-heart"></i>
                                                     </span>
                                                 </a>
-                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm p-2 pb-1">
-                                                    <span class="material-symbols-outlined">
-                                                        chat
-                                                    </span>
+                                                <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 booklist-card-btn">
+                                                    <span><i class="bi bi-chat-left-dots-fill"></i></span>
                                                 </a>
                                             </div>
                                         </div>
