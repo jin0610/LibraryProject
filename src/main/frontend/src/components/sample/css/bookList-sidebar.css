@@ -17,33 +17,21 @@
     color : black;
 }
 
+.sidebar-card > .card-header > .nav-link > span{
+    margin-right:.2em;
+}
+
 .check-all{
     text-decoration: none;
     color : black;
 }
 
-.dropdown {
-    position: relative;
-    font-size: 14px;
-    color: #333;
-}
-
-.dropdown-list {
+.sidebar-sub-list {
     padding: 12px;
     background: #fff;
 }
 
-.dropdown-option {
+.sidebar-option {
     display: block;
     padding: .2em .5em;
-}
-
-.dropdown-label {
-    display: block;
-    height: 30px;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 6px 12px;
-    line-height: 1;
-    cursor: pointer;
 }
