@@ -109,7 +109,7 @@ const BookListList = () => {
                         {/* <!-- pagination --> */}
                         <div class="mt-5 row">
                             <div class="col">
-                                <div class=" d-md-flex justify-content-between align-items-center">
+                                <div class="justify-content-between align-items-center">
                                     <ul class="pagination mt-2 mt-md-0" role="navigation" aria-label="Pagination">
                                         <li class="previous disabled">
                                             <a class="page-link mx-1 rounded " tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">

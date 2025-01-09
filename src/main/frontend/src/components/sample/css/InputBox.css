@@ -1,0 +1,23 @@
+.searchbox{
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.searchgroup{
+    padding: 3em 3em;
+    width : 50vw;
+    display: flex;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.search-input{
+    padding: 1em 3em;
+}
+
+.searchbtn{
+    margin-left:-4rem;
+    border : 0;
+    
+}

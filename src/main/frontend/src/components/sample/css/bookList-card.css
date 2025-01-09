@@ -32,3 +32,9 @@
     align-items: center;
     margin-left : .3em;
 }
+
+
+/* pagination */
+.pagination{
+    justify-content: center;
+}

@@ -5,6 +5,7 @@ const BookListSidebar = () =>{
 
     const [sublist01, setSublist01] = useState(true);
     const [sublist02, setSublist02] = useState(true);
+    const [group01Check, setGroup01Check] = useState(false);
 
     const handleShow01 = () =>{
         setSublist01(!sublist01);
@@ -12,6 +13,20 @@ const BookListSidebar = () =>{
 
     const handleShow02 = () =>{
         setSublist02(!sublist02);
+    }
+
+    const handleCheck01 = ()=>{
+        setGroup01Check(!group01Check)
+        console.log('click');
+        console.log(document.getElementsByClassName('sidebar01-group'))
+        // console.log($('.sidebar01-group'))
+    }
+
+    if(group01Check === true){
+        var checklist = document.getElementsByClassName('sidebar01-group')
+        
+    } else {
+
     }
 
     return(
@@ -26,32 +41,32 @@ const BookListSidebar = () =>{
                     </a>
                 </div>
                 <div class="sidebar-sub-list collapse show" id="bookListSidebar01">
-                    <a href="#" data-toggle="check-all" class="sidebar-option check-all">
+                    <a data-toggle="check-all" class="sidebar-option check-all group01-check-all" onClick={handleCheck01}>
                         Check All
                     </a>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 종합
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 종합
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 건강/취미
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 건강/취미
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 경제경영
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 경제경영
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 고전
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 고전
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 과학
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 과학
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 대학교재/전문서적
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 대학교재/전문서적
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 소설/시/희곡
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 소설/시/희곡
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar01-group" value=""/> 사전/기타
+                        <input type="checkbox" class="sidebar01-group" name="sidebar01-group" value=""/> 사전/기타
                     </label>
                 </div>
                 <div class="card-header justify-content-center">
@@ -67,16 +82,16 @@ const BookListSidebar = () =>{
                         Check All
                     </a>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar02-group" value=""/> 국내도서
+                        <input type="checkbox" name="sidebar01-group" class="sidebar02-group" value=""/> 국내도서
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar02-group" value=""/> 외국도서
+                        <input type="checkbox" name="sidebar02-group" class="sidebar02-group" value=""/> 외국도서
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar02-group" value=""/> eBook
+                        <input type="checkbox" name="sidebar02-group" class="sidebar02-group" value=""/> eBook
                     </label>
                     <label class="sidebar-option">
-                        <input type="checkbox" name="sidebar02-group" value=""/> 음반/DVD/블루레이
+                        <input type="checkbox" name="sidebar02-group" class="sidebar02-group" value=""/> 음반/DVD/블루레이
                     </label>
                 </div>
             </div>

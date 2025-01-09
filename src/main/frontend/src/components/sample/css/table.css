@@ -1,0 +1,40 @@
+.notice-search-btn-group{
+    display: flex;
+    
+}
+.notice-search-group{
+    display: flex;
+    margin: 0 .4em;
+}
+
+.notice-write-btn{
+    margin-left:.2em;
+}
+
+/* 공지사항 목록 */
+.table-responsive {
+    width: 100%;
+    height : calc(50vw * 0.5)
+}
+
+.notice-table > thead{
+    width: 100%;
+    text-align: center;
+
+}
+.notice-table > tbody{
+    width: 100%;
+    text-align: center;
+
+}
+.notice-table-row{
+    max-height:1em;
+}
+.notice-table-row:not(:last-child){
+    border-bottom-width: 1px;
+}
+
+/* pagination */
+.pagination{
+    justify-content: center;
+}
