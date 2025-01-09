@@ -13,13 +13,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+//@Configuration
+//@EnableJpaRepositories(basePackages = "org.project.libraryProject.repository")
+//@EntityScan(basePackages = "org.project.libraryProject.Entity")
 @Configuration
-@EnableJpaRepositories(basePackages = "org.project.libraryProject.repository")
+@EnableTransactionManagement
 public class JpaConfig {
 
     @Bean

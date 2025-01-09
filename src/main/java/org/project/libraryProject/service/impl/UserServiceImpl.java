@@ -2,11 +2,12 @@ package org.project.libraryProject.service.impl;
 
 import org.project.libraryProject.entity.User;
 import org.project.libraryProject.repository.UserRepository;
-//import org.project.libraryProject.repository.UserRepositoryCustomImpl;
+import org.project.libraryProject.repository.UserRepositoryCustomImpl;
 import org.project.libraryProject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
@@ -15,15 +16,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private final UserRepository userRepository;
 
-
-
-//    private final UserRepositoryCustomImpl userRepositoryCustom;
+    private final UserRepositoryCustomImpl userRepositoryCustom;
 
     public UserServiceImpl(UserRepository userRepository
-//            , UserRepositoryCustomImpl userRepositoryCustom
+            , UserRepositoryCustomImpl userRepositoryCustom
     ) {
         this.userRepository = userRepository;
-//        this.userRepositoryCustom = userRepositoryCustom;
+        this.userRepositoryCustom = userRepositoryCustom;
     }
 
     @Override
@@ -38,6 +37,22 @@ public class UserServiceImpl implements UserService {
 
 //    public User getUserById(String id) {
 //        return userRepositoryCustom.findUserById(id);
+//    }
+//
+//
+//    //
+//
+//    @PersistenceContext
+//    private EntityManager em;
+//
+//    public List<User> findByUserName(String userName) {
+//        QUser qUser = QUser.user;
+//
+//        return new JPAQuery<Void>(em)
+//                .select(qUser)
+//                .from(qUser)
+//                .where(qUser.userName.eq(userName))
+//                .fetch();
 //    }
 
 }
