@@ -1,4 +1,4 @@
-import PageBlock from "../components/pageBlock";
+import PageBlock from "../components/PageBlock";
 import Header from "../components/header";
 
 
