@@ -6,34 +6,33 @@ import org.project.libraryProject.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
+//import javax.persistence.EntityManager;
+//import javax.persistence.PersistenceContext;
+//import java.util.List;
 
 @Repository
 public class UserRepositoryCustomImpl implements UserRepositoryCustom {
 
-//    private final JPAQueryFactory queryFactory;
-//
-//    @Autowired
-//    public UserRepositoryCustomImpl(JPAQueryFactory queryFactory) {
-//        this.queryFactory = queryFactory;
-//    }
-//
-    @PersistenceContext
-    private EntityManager em;
+    private final JPAQueryFactory queryFactory;
+
+    @Autowired
+    public UserRepositoryCustomImpl(JPAQueryFactory queryFactory) {
+        this.queryFactory = queryFactory;
+    }
+
+//    @PersistenceContext
+//    private EntityManager em;
 
 
-    @Override
+//    @Override
     public User findUserById(String id) {
-        QUser user = QUser.user;
-        return new JPAQuery<Void>(em)
-                .select(qUser)
-                .from(qUser)
-                .where(qUser.userName.eq(userName))
-                .fetch();
-
-//    return null;
+//        QUser qUser = QUser.user; // QueryDSL 사용자 객체 참조
+//
+//        return queryFactory
+//                .selectFrom(qUser)
+//                .where(qUser.id.eq(id))
+//                .fetchOne();
+        return null;
     }
 
 //    @PersistenceContext
