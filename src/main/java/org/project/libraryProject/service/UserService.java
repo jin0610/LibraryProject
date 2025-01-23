@@ -8,6 +8,4 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-//    User getUserById(String id);
-
 }

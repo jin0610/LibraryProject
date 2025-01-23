@@ -1,6 +1,7 @@
 package org.project.libraryProject.config;
 
 import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,11 +12,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-
-import com.zaxxer.hikari.HikariDataSource;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 @Configuration
