@@ -8,25 +8,47 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url "https://repo.spring.io/milestone" } // Spring 마일스톤 저장소
 }
 
 dependencies {
-    testImplementation("org.springframework:spring-test:4.2.0.RELEASE")
-    testImplementation("junit:junit:4.12")
+    // Lombok
+    implementation 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
-    compileOnly("org.projectlombok:lombok:1.18.22")
-    compileOnly("javax.servlet:javax.servlet-api:3.1.0")
+    // Servlet & JSP
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation 'javax.servlet:jstl:1.2'
 
-    implementation("org.springframework:spring-context:4.2.0.RELEASE")
-    implementation("org.springframework:spring-webmvc:4.2.0.RELEASE")
+    // Spring Framework
+    implementation 'org.springframework:spring-context:5.3.30'
+    implementation 'org.springframework:spring-webmvc:5.3.30'
+    implementation 'org.springframework:spring-beans:5.3.30'
+    implementation 'org.springframework:spring-core:5.3.30'
+    implementation 'org.springframework:spring-web:5.3.30'
+    implementation 'org.springframework:spring-orm:5.3.29'
+    implementation 'org.springframework:spring-tx:5.3.29'
 
-    implementation "com.fasterxml.jackson.core:jackson-core:2.9.9"
-    implementation "com.fasterxml.jackson.core:jackson-annotations:2.9.9"
-    implementation "com.fasterxml.jackson.core:jackson-databind:2.9.9"
-    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9"
+    // Spring Data JPA
+    implementation 'org.springframework.data:spring-data-jpa:2.7.14'
 
-//    testImplementation platform('org.junit:junit-bom:5.9.1')
-//    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // Persistence & ORM
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+
+    // Database
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // Connection Pool
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+
+    // JSON
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
 
 test {
