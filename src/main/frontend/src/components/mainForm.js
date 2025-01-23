@@ -13,7 +13,7 @@ const mainForm =() =>{
             <div className="section section2" id="section2">
                 <header>
                     <div className="logo">
-                        <img src="logo.png" alt="Logo"/>
+                        <img src="#" alt="Logo"/>
                         <span>동그라미 도서관</span>
                     </div>
                     <nav>
@@ -27,23 +27,23 @@ const mainForm =() =>{
                     </nav>
                 </header>
                 <div className="banner">
-                    <img src="banner.jpg" alt="도서관 배너"/>
+                    <img src="#" alt="도서관 배너"/>
                 </div>
                 <div className="services">
                     <div className="service">
-                        <img src="service1.png" alt="Service 1"/>
+                        <img src="#" alt="Service 1"/>
                         <p>대출/예약</p>
                     </div>
                     <div className="service">
-                        <img src="service2.png" alt="Service 2"/>
+                        <img src="#" alt="Service 2"/>
                         <p>이용안내</p>
                     </div>
                     <div className="service">
-                        <img src="service3.png" alt="Service 3"/>
+                        <img src="#" alt="Service 3"/>
                         <p>프로그램 예약</p>
                     </div>
                     <div className="service">
-                        <img src="service4.png" alt="Service 4"/>
+                        <img src="#" alt="Service 4"/>
                         <p>중고거래</p>
                     </div>
                 </div>
