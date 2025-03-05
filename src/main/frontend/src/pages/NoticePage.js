@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/header";
+import Header from "../components/sample/Header";
 import PageBlock from "../components/PageBlock";
-import NoticeForm from "../components/noticeForm";
+import NoticeContainer from "../containers/notice/NoticeContainer";
 
 
 const NoticePage = () =>{
@@ -9,7 +9,7 @@ const NoticePage = () =>{
     return(
         <PageBlock>
            <Header/>
-            <NoticeForm/>
+            <NoticeContainer/>
         </PageBlock>
 
     )

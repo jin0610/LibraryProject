@@ -15,7 +15,6 @@ public class User {
 
     @Id
     private String userId;
-
     private String userName;
 }
 
