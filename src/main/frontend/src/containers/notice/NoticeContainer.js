@@ -9,7 +9,7 @@ const NoticeContainer = () =>{
     useEffect(() => {
         console.log("start")
         client.get('/api/notice/noticeList').then((res) => {
-            console.log(res.data.result)
+            console.log(res.data.noticeList)
             if(res.data.result==="success"){
                 setNoticeList(res.data.noticeList)
             }

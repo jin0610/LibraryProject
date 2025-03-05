@@ -1,7 +1,13 @@
 import "./css/noticeForm.css"
+import moment from 'moment';
 
 const noticeForm = (props) =>{
-    const {msg} = props
+    const {noticeList} = props
+
+    const regDateFormat = (date) =>{
+        return moment(date).format('YYYY-MM-DD')
+    }
+
     return(
         <div class="container mt-5">
             <div class="mb-5 row">
@@ -47,24 +53,25 @@ const noticeForm = (props) =>{
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="notice-table-row">
-                                    <td colSpan="1" class="align-middle border-top-0">
-                                        <div>1</div>
-                                    </td>
-                                    <td colSpan="4" class="align-middle border-top-0">
-                                        <div>공지사항1</div>
-                                    </td>
-                                    <td colSpan="2" class="align-middle border-top-0">
-                                        <div>writer</div>
-                                    </td>
-                                    <td colSpan="2" class="align-middle border-top-0">
-                                        <div>2025-01-01</div>
-                                    </td>
-                                    <td colSpan="2" class="align-middle border-top-0">
-                                        <div>34</div>
-                                    </td>
-                                </tr>
-                               
+                                {noticeList.map((notice, index) =>(
+                                    <tr class="notice-table-row" key={index}>
+                                        <td colSpan="1" class="align-middle border-top-0">
+                                            <div>{notice.notice_id}</div>
+                                        </td>
+                                        <td colSpan="4" class="align-middle border-top-0">
+                                            <div>{notice.title}</div>
+                                        </td>
+                                        <td colSpan="2" class="align-middle border-top-0">
+                                            <div>{notice.writer}</div>
+                                        </td>
+                                        <td colSpan="2" class="align-middle border-top-0">
+                                            <div>{regDateFormat(notice.reg_date)}</div>
+                                        </td>
+                                        <td colSpan="2" class="align-middle border-top-0">
+                                            <div>34</div>
+                                        </td>
+                                    </tr>
+                                ))}                               
                             </tbody>
                         </table>
                     </div>

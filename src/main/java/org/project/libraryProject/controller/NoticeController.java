@@ -2,7 +2,6 @@ package org.project.libraryProject.controller;
 
 import org.project.libraryProject.entity.Notice;
 import org.project.libraryProject.service.NoticeService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -11,7 +10,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/notice")
-@CrossOrigin(origins = "http://localhost:3000", methods = RequestMethod.GET)
 public class NoticeController {
 
     private final NoticeService noticeService;
@@ -25,7 +23,6 @@ public class NoticeController {
         return noticeService.getAllNoticeList();
     }
     @GetMapping("/noticeList")
-    @CrossOrigin(origins = "http://localhost:3000", methods = RequestMethod.GET)
     public HashMap<String, Object> notice(){
         HashMap<String, Object> dataMap = new HashMap<String, Object>();
         List<Notice> noticeList = noticeService.getAllNoticeList();
