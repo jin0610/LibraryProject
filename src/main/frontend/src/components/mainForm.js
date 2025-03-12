@@ -9,9 +9,8 @@ const mainForm =() =>{
             </div>
             <div className="section section2" id="section2">
                 <header>
-                    <div className="logo" >
-                        <img src="#" alt="Logo"/>
-                    </div>
+
+
                     <nav>
                         <a href="#">도서관 안내</a>
                         <a href="#">자료 검색</a>
