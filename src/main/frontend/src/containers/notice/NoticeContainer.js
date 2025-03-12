@@ -1,14 +1,14 @@
 import NoticeForm from "../../components/noticeForm";
 import client from "../../client";
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 const NoticeContainer = () =>{
 
     const [noticeList, setNoticeList] = useState([]);
 
     useEffect(() => {
         console.log("start")
-        client.get('/api/notice/noticeList').then((res) => {
+        axios.get('/api/notice/noticeList').then((res) => {
             console.log(res.data.noticeList)
             if(res.data.result==="success"){
                 setNoticeList(res.data.noticeList)

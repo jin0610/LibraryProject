@@ -8,7 +8,7 @@ const NoticePage = () =>{
 
     return(
         <PageBlock>
-           <Header/>
+            <Header/>
             <NoticeContainer/>
         </PageBlock>
 
