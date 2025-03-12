@@ -1,7 +1,15 @@
 .section1 {
-    background-color: #f8f9fa;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+
 }
+.bestmain {
+    margin-bottom: 20px;
+    padding-left: 40px;
+
+}
+

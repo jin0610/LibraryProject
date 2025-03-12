@@ -1,29 +1,50 @@
 import "./css/mainForm.css"
+import React from "react";
 const mainForm =() =>{
 
     return (
         <div>
             <div className="section section1" id="section1">
+                <div className="container searchbox">
+                    <div className="searchgroup input-group">
+                        <input placeholder="Search" className="search-input rounded-pill form-control" type="search"/>
+                        <span className="my-auto">
+                    <button type="button" className="searchbtn btn btn-white "><i className="bi bi-search"></i></button>
+                </span>
+                        <div className="bestmain">
+                            인기순위 🔽
+                        </div>
+                    </div>
+
+                </div>
+                <nav>
+                    <ul className="list-wrap">
+                        <li className="dropdown-wrap">
+                            <button className="dropdown-btn">List 1</button>
+                            <ul className="dropdown">
+                                <li><a href="" className="dropdown-item">menu 1</a></li>
+                                <li><a href="" className="dropdown-item">menu 2</a></li>
+                                <li><a href="" className="dropdown-item">menu 3</a></li>
+                                <li><a href="" className="dropdown-item">menu 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
 
 
             </div>
+
             <div className="section section2" id="section2">
-                <header>
+
+                <section className="banner">
+                    <div className="container title">
+                        <div className="p-3 text-center">
+                            <h1 className="banner-title">Sample Homepage</h1>
+                        </div>
+                    </div>
+                </section>
 
 
-                    <nav>
-                        <a href="#">도서관 안내</a>
-                        <a href="#">자료 검색</a>
-                        <a href="#">추천 도서</a>
-                        <a href="#">신상 도서</a>
-                        <a href="#">중고서점</a>
-                        <a href="#">행사</a>
-                        <a href="#">나의 공간</a>
-                    </nav>
-                </header>
-                <div className="banner">
-                    <img src="#" alt="도서관 배너"/>
-                </div>
                 <div className="services">
                     <div className="service">
                         <img src="#" alt="Service 1"/>
@@ -57,6 +78,6 @@ const mainForm =() =>{
             </div>
         </div>
     )
-            }
+}
 
- export default mainForm;
+export default mainForm;
