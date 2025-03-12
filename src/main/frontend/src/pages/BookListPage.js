@@ -6,6 +6,7 @@ import InputBox from "../components/sample/InputBox";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import client from "../client";
 
 const BookListPage = () =>{
         const [books, setBooks] = useState([]);
@@ -13,7 +14,7 @@ const BookListPage = () =>{
         const [totalPages, setTotalPages] = useState(0);
 
         const pageChange = (page) => {
-            axios.get(`/books?page=${page}`)
+            client.get(`/books?page=${page}`)
                 .then(response => {
                     setCurrentPage(page);
                     setBooks(response.data.content);
