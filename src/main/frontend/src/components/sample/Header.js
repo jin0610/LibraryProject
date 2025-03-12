@@ -7,16 +7,16 @@ const Header = () => {
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container">
                     {/* title */}
-                    <div className="logo">
+                    <div className="logo ">
                         <img className="logoimg" src="/logoimg.png" alt="Logo"/>
 
 
-                    <a href="/" class="navbar-brand header-title">동그라미 도서관</a>
-                    <button class="header-nav-button navbar-toggler " type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbar01" aria-controls="navbar01" aria-expanded="true"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                        <a href="/" class="navbar-brand header-title">동그라미 도서관</a>
+                        <button class="header-nav-button navbar-toggler " type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbar01" aria-controls="navbar01" aria-expanded="true"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
                     <div class="header-menu navbar-collapse collapse " id="navbar01">
                         <ul class="navbar-nav me-auto">

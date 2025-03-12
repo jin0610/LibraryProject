@@ -42,12 +42,12 @@ const BookListList = () => {
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1
+                                                    <a role="button" tabIndex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1
                                                     bookList-list-btn">
                                                         <span><i class="bi bi-heart me-1"></i></span>
                                                         <span>찜하기</span>
                                                     </a>
-                                                    <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1 bookList-list-btn">
+                                                    <a role="button" tabIndex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1 bookList-list-btn">
                                                         <span><i class="bi bi-chat-left-dots-fill me-1"></i></span>
                                                         <span>판매자와 채팅</span>
                                                     </a>
@@ -90,12 +90,12 @@ const BookListList = () => {
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1
+                                                    <a role="button" tabIndex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1
                                                     bookList-list-btn">
                                                         <span><i class="bi bi-heart me-1"></i></span>
                                                         <span>찜하기</span>
                                                     </a>
-                                                    <a role="button" tabindex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1 bookList-list-btn">
+                                                    <a role="button" tabIndex="0" href="#!" class="btn btn-primary btn-sm px-2 py-1 bookList-list-btn">
                                                         <span><i class="bi bi-chat-left-dots-fill me-1"></i></span>
                                                         <span>판매자와 채팅</span>
                                                     </a>
@@ -112,30 +112,30 @@ const BookListList = () => {
                                 <div class="justify-content-between align-items-center">
                                     <ul class="pagination mt-2 mt-md-0" role="navigation" aria-label="Pagination">
                                         <li class="previous disabled">
-                                            <a class="page-link mx-1 rounded " tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <a class="page-link mx-1 rounded " tabIndex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                 <polyline points="15 18 9 12 15 6"></polyline>
                                             </svg>
                                             </a>
                                         </li>
                                         <li class="page-item active">
-                                            <a rel="canonical" role="button" class="page-link mx-1 rounded" tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a>
+                                            <a rel="canonical" role="button" class="page-link mx-1 rounded" tabIndex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a>
                                         </li>
                                         <li class="page-item">
-                                            <a rel="next" role="button" class="page-link mx-1 rounded" tabindex="0" aria-label="Page 2">2</a>
+                                            <a rel="next" role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 2">2</a>
                                         </li>
                                         <li class="page-item">
-                                            <a role="button" class="page-link mx-1 rounded" tabindex="0" aria-label="Page 3">3</a>
+                                            <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 3">3</a>
                                         </li>
                                         <li class="page-item">
-                                            <a role="button" class="page-link mx-1 rounded" tabindex="0" aria-label="Page 4">4</a>
+                                            <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 4">4</a>
                                         </li>
                                         <li class="page-item">
-                                            <a role="button" class="page-link mx-1 rounded" tabindex="0" aria-label="Page 5">5</a>
+                                            <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 5">5</a>
                                         </li>
                                         <li class="next">
-                                            <a class="page-link mx-1 rounded" tabindex="0" role="button" aria-disabled="false" aria-label="Next page" rel="next">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline>
+                                            <a class="page-link mx-1 rounded" tabIndex="0" role="button" aria-disabled="false" aria-label="Next page" rel="next">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline>
                                                 </svg>
                                             </a>
                                         </li>
