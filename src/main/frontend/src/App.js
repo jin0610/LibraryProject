@@ -4,6 +4,8 @@ import MainPage from './pages/MainPage';
 import NoticePage from './pages/NoticePage';
 import SamplePage from './pages/SamplePage';
 import BookListPage from "./pages/BookListPage";
+import Library from "./components/sample/Library";
+import LibraryPage from "./components/sample/Library";
 
 function App() {
   
@@ -14,6 +16,7 @@ function App() {
         <Route path='/notice' element={<NoticePage/>}/>
         <Route path='/sample' element={<SamplePage/>}/>
         <Route path='/books' element={<BookListPage/>}/>
+        <Route path='/Library' element={<LibraryPage />}/>
       </Routes>
     </BrowserRouter>
   )

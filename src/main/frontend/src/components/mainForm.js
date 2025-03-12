@@ -4,17 +4,13 @@ const mainForm =() =>{
     return (
         <div>
             <div className="section section1" id="section1">
-                <h1>동그라미 도서관</h1>
-                <div className="scroll-down"
-                     onClick="document.getElementById('section2').scrollIntoView({ behavior: 'smooth' });">
-                    도서관으로 이동 ⬇
-                </div>
+
+
             </div>
             <div className="section section2" id="section2">
                 <header>
-                    <div className="logo">
+                    <div className="logo" >
                         <img src="#" alt="Logo"/>
-                        <span>동그라미 도서관</span>
                     </div>
                     <nav>
                         <a href="#">도서관 안내</a>
