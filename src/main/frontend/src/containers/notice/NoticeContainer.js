@@ -7,7 +7,7 @@ const NoticeContainer = () =>{
     const [noticeList, setNoticeList] = useState([]);
 
     const getData = ()=>{
-        client.get('/api/notice/noticeList')
+        client.get('/api/notice/notice')
             .then(res => {
                 console.log(res.data.noticeList);
                 if(res.data.result === 'success'){

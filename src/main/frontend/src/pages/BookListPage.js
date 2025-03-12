@@ -14,7 +14,7 @@ const BookListPage = () =>{
         const [totalPages, setTotalPages] = useState(0);
 
         const pageChange = (page) => {
-            client.get(`/books?page=${page}`)
+            client.get(`/api/books?page=${page}`)
                 .then(response => {
                     setCurrentPage(page);
                     setBooks(response.data.content);
