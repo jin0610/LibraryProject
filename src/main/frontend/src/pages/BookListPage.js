@@ -14,7 +14,10 @@ const BookListPage = () =>{
         const [totalPages, setTotalPages] = useState(0);
 
         const pageChange = (page) => {
-            client.get(`/api/books?page=${page}`)
+            client.get(`/api/books?page=${page}`, {
+                headers: {
+                    "Origin": "http://localhost:3000"
+                }            })
                 .then(response => {
                     setCurrentPage(page);
                     setBooks(response.data.content);
