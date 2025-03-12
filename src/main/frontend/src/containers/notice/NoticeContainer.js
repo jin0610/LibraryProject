@@ -7,7 +7,11 @@ const NoticeContainer = () =>{
     const [noticeList, setNoticeList] = useState([]);
 
     const getData = ()=>{
-        client.get('/api/notice/noticeList')
+        client.get(`/api/notice`, {
+            headers: {
+                "Origin": "http://localhost:3000",
+            }
+        })
             .then(res => {
                 console.log(res.data.noticeList);
                 if(res.data.result === 'success'){
