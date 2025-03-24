@@ -21,7 +21,7 @@ public class JpaConfig {
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://mysql-library.duckdns.org:3306/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC");
+        config.setJdbcUrl("jdbc:mysql://mysql-db-library-db-proj.g.aivencloud.com:24159/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC");
         config.setUsername("user");
         config.setPassword("1234");
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
