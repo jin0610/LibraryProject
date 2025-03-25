@@ -31,6 +31,7 @@ dependencies {
 
     // Spring Data JPA
     implementation 'org.springframework.data:spring-data-jpa:2.7.14'
+    implementation 'org.springframework:spring-aspects:5.3.14'
 
     // Persistence & ORM
     implementation 'javax.persistence:javax.persistence-api:2.2'
@@ -52,11 +53,14 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
     // Web Security
-//    implementation 'org.springframework.security:spring-security-config:5.3.0.release'
     implementation "org.springframework.security:spring-security-web:5.4.0"
     implementation "org.springframework.security:spring-security-config:5.4.0"
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

@@ -27,7 +27,7 @@ const Header = () => {
                                 <a class="nav-link" href="/notice">Notice</a>
                             </li>
                             <li class="header-menu-item nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link" href="/auth/login">Login</a>
                             </li>
                         </ul>
                     </div>

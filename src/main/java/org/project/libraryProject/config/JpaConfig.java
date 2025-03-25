@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -16,12 +17,13 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "org.project.libraryProject.repository")
+@EnableJpaAuditing  // JPA Auditing 활성화
 public class JpaConfig {
 
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://mysql-library.duckdns.org:3306/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC");
+        config.setJdbcUrl("jdbc:mysql://mysql-db-library-db-proj.g.aivencloud.com:24159/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&autoReconnect=true");
         config.setUsername("user");
         config.setPassword("1234");
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");

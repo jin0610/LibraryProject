@@ -6,6 +6,8 @@ import SamplePage from './pages/SamplePage';
 import BookListPage from "./pages/BookListPage";
 import Library from "./components/sample/Library";
 import LibraryPage from "./components/sample/Library";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   
@@ -17,6 +19,8 @@ function App() {
         <Route path='/sample' element={<SamplePage/>}/>
         <Route path='/books' element={<BookListPage/>}/>
         <Route path='/Library' element={<LibraryPage />}/>
+        <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/auth/login' element={<LoginPage/>}/>
       </Routes>
     </BrowserRouter>
   )
