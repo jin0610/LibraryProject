@@ -17,28 +17,26 @@ const mainForm =() =>{
                     </div>
 
                 </div>
-                <nav>
-                    <ul className="list-wrap">
-                        <li className="dropdown-wrap">
-                            <button className="dropdown-btn">List 1</button>
-                            <ul className="dropdown">
-                                <li><a href="" className="dropdown-item">menu 1</a></li>
-                                <li><a href="" className="dropdown-item">menu 2</a></li>
-                                <li><a href="" className="dropdown-item">menu 3</a></li>
-                                <li><a href="" className="dropdown-item">menu 4</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                <nav className="nav-container">
+                <ul className="nav-menu">
+                    <li >도서관 안내</li>
+                    <li>자료검색</li>
+                    <li>추천도서</li>
+                    <li>신상도서</li>
+                    <li>중고서점</li>
+                    <li>행사</li>
+                    <li>나의 공간</li>
 
+                </ul>
+            </nav>
 
-            </div>
+        </div>
 
-            <div className="section section2" id="section2">
+    <div className="section section2" id="section2">
 
-                <section className="banner">
-                    <div className="container title">
-                        <div className="p-3 text-center">
+        <section className="banner">
+            <div className="container title">
+                <div className="p-3 text-center">
                             <h1 className="banner-title">Sample Homepage</h1>
                         </div>
                     </div>
@@ -61,18 +59,6 @@ const mainForm =() =>{
                     <div className="service">
                         <img src="#" alt="Service 4"/>
                         <p>중고거래</p>
-                    </div>
-                </div>
-                <div className="info-section">
-                    <div className="info-box">
-                        <h3>책바다</h3>
-                        <p>공공도서관 서비스 안내</p>
-                        <p>참여 도서관: 1,307개</p>
-                    </div>
-                    <div className="info-box">
-                        <h3>책이음</h3>
-                        <p>도서관 회원 서비스 안내</p>
-                        <p>참여 도서관: 2,721개</p>
                     </div>
                 </div>
             </div>
