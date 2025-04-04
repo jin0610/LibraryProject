@@ -1,0 +1,23 @@
+.chat-page-form{
+    min-height: calc(100vh - 15rem);
+    /* border: 3px #000000 !important; */
+}
+
+.chat-box{
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+.chat-box-header{
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.chat-img{
+    width: 4rem;
+    aspect-ratio: 1;
+}
+
+.chat-img > img{
+    /* width: 5rem; */
+}
