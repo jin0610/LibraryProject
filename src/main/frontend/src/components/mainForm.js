@@ -27,16 +27,16 @@ const MainForm = () => {
                 <nav className="nav-container">
                     <ul className="nav-menu">
                         <li>
-                            <a href="#guid">도서관 안내</a>
+                  {/*    <a href="#guid">도서관 안내</a>*/}
                         </li>
                         <li>
-                            <a href="#searchBook">자료검색</a>
+                           // {/*<a href="#searchBook">자료검색</a>*/}
                         </li>
                         <li>
-                            <a href="#recommendBook">추천도서</a>
+                            {/*<a href="#recommendBook">추천도서</a>*/}
                         </li>
                         <li>
-                            <a href="#newBook">신상도서</a>
+                       {/*     <a href="#newBook">신상도서</a>*/}
                         </li>
                         <li>중고서점</li>
                         <li>행사</li>
