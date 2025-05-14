@@ -6,6 +6,7 @@ import SamplePage from './pages/SamplePage';
 import Library from "./components/sample/Library";
 import LibraryPage from "./components/sample/Library";
 import BookListPage from "./pages/BookListPage";
+import ChatPage from './pages/ChatPage';
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/notice' element={<NoticePage/>}/>
+        <Route path='/chat' element={<ChatPage/>}/>
         <Route path='/sample' element={<SamplePage/>}/>
         <Route path='/Library' element={<LibraryPage />}/>
         <Route path='/books' element={<BookListPage/>}/>

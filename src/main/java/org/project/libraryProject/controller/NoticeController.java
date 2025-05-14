@@ -1,16 +1,16 @@
 package org.project.libraryProject.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.project.libraryProject.entity.Notice;
 import org.project.libraryProject.service.NoticeService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 
+@Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/notice")
@@ -23,13 +23,8 @@ public class NoticeController {
     }
 
     @GetMapping
-    public HashMap<String, Object> notice(){
-        HashMap<String, Object> dataMap = new HashMap<String, Object>();
-        List<Notice> noticeList = noticeService.getAllNoticeList();
-
-        // System.out.println(noticeList);
-        dataMap.put("result", "success");
-        dataMap.put("noticeList", noticeList);
-        return dataMap;
+    public Page<Notice> getNotice(@RequestParam(value = "page", required = false, defaultValue = "1") int page){
+//        System.out.println("noticeList : " + noticeService.getNoticeList(page));
+        return noticeService.getNoticeList(page);
     }
 }
