@@ -15,7 +15,10 @@ const chattingForm = () => {
                     </div>
                     <div>
                         <nav className="nav nav-pills position-sticky flex-column mb-8">
-                            <a className="nav-link active">user1</a>
+                            <div className="nav-link active">
+                                <img></img>
+                                <p>user1</p>
+                            </div>
                             <a className="nav-link">user2</a>
                             <a className="nav-link">user3</a>
                             <a className="nav-link">user4</a>
@@ -30,12 +33,14 @@ const chattingForm = () => {
                         <div className='col-md-4 chat-img rounded-circle bg-white ml-l'>
                             <img src="https://cdn-icons-png.flaticon.com/512/11058/11058552.png" alt="" class="img-thumbnail mx-auto rounded-circle"/>
                         </div>
-                        <div className='col-md-8'>
-
+                        <div className='col-md-8 chat-info'>
+                                <p>user1</p>
+                            <div>
+                            </div>
                         </div>
 
                     </div>
-                    <section className="card bg-body-tertiary"> 
+                    <section className="card chatting-box bg-body-tertiary"> 
 
                     </section>
 
