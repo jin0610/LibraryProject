@@ -1,7 +1,47 @@
-.section1 {
-    background-color: #f8f9fa;
+/* mainForm.css */
+
+/* 왼쪽 정보 박스 스타일 */
+.info-box {
+    border: 1px solid #007bff;
+    padding: 20px;
+    border-radius: 8px;
+    background: #e9f7fc;
+    text-align: center;
+    flex: 1;
+}
+
+.info-box h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #333;
+}
+
+.info-btn {
+    margin-top: 10px;
+}
+
+/* 오른쪽 회색 버튼 스타일 */
+.right-buttons .btn-gray {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+}
+
+.right-buttons .btn-gray:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* flexbox 스타일 */
+.d-flex {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+}
+.bestmain{
+
 }
