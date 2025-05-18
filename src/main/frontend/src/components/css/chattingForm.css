@@ -1,45 +1,103 @@
-.chat-page-form{
-    min-height: calc(100vh - 15rem);
-    /* border: 3px #000000 !important; */
+.chat-container{
+    margin-top:5rem;
+    height:calc(100vh * 0.7);
 }
 
-.chat-box{
-    height: 100%;
-    background-color: aqua;
+.chat-row, .chat-user-list-card, .chat-user-list-card > .card{
+    height:100%;
 }
 
-.chat-box-header{
-    height: 20%;
-    padding: 1rem;
-    align-items: center;
-    vertical-align: middle;
-
+.chat-user-list{
+    height:100%;
+    overflow:auto;
+}
+.chat-user-list-img{
+    height: 3rem;
 }
 
-.chat-img{
-    width: 4rem;
-    aspect-ratio: 1.0;
-    display: inline-block;
-    vertical-align: middle;
-    padding:0 !important;
-    
+.chat-user-list-name{
+    font-size: 1.2rem;
 }
 
-.chat-img > img{
+.chat-user-list-content{
+    font-size:1rem;
+}
+
+
+/* 채팅 폼 */
+.chat-form{
+    height:calc(100vh * 0.7);
+}
+
+.chat-form-header{
+    /* height:10%; */
+    background-color: transparent;
+}
+
+.chat-form-header-img{
+    height:2.5rem;
+}
+
+.chat-form-hedaer-name{
+    font-size : 1rem;
+}
+
+.chat-form-header-delete-chat{
+    background-color: lightgray;
+}
+
+/* 채팅 페이지 메시지 style */
+.text-body-tertiary{
+    opacity: 0.85;
+    font-size: .8rem;
+}
+
+.chat-message{
     width:100%;
-    
 }
 
-.chat-info{
-    vertical-align: baseline;   
+.chat-message:has(.sent-message-content){
+    justify-content: flex-end !important;
+    justify-items: end !important;
 }
 
-.chat-info > p{
-    font-size: 2rem;
-    vertical-align: top;   
+.w-100:has(.sent-message-content){
+    justify-items: end !important;
 }
 
-.chatting-box{
-    min-height:80%;
-    color:blanchedalmond;
+.flex-end-center{
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align:center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/* .chat .chat-message .sent-message-content {
+  position: relative;
+}
+
+.chat .chat-message .received-message-content {
+  position: relative;
+} */
+
+.received-message-img{
+    width:2rem;
+}
+
+
+.chat-form-footer{
+    background-color: transparent;
+}
+
+.card-textarea{
+    width: 100%;
+    font-size:1rem;
+
+}
+
+.btn-clip{
+    background-color: lightgrey;
 }
