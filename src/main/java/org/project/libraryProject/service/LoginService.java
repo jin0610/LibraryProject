@@ -1,8 +1,8 @@
 package org.project.libraryProject.service;
 
-import org.project.libraryProject.entity.User;
+import org.project.libraryProject.dto.UserRegisterDTO;
 
 public interface LoginService {
 
-    public String registerUser(User user);
+    public String registerUser(UserRegisterDTO dto);
 }

@@ -1,14 +1,15 @@
 package org.project.libraryProject.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.project.libraryProject.dto.UserRegisterDTO;
 import org.project.libraryProject.service.LoginService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
@@ -19,25 +20,28 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-//    @GetMapping("/login")
-//    public String loginForm() {
-//        return "login";
-//    }
-
     @PostMapping("/register")
-    public String registerForm(HttpServletRequest request) {
-        String userId = request.getParameter("userId");
-        String userPwd = request.getParameter("userPwd");
-        String userName = request.getParameter("userName");
-        String phone = request.getParameter("phone");
-        String birthdate = request.getParameter("birthdate");
-        String gender = request.getParameter("gender");
-        String notiStatus = request.getParameter("notiStatus");
-
-        return "success";
-//        return loginService.registerUser(user);
+    public ResponseEntity<String> register(@RequestBody UserRegisterDTO dto) {
+        String result = loginService.registerUser(dto);
+        return ResponseEntity.ok(result);
     }
 
-//    @GetMapping
-//    public
+    @GetMapping("/check-id")
+    public ResponseEntity<Map<String, Boolean>> checkId(@RequestParam String userId) {
+        boolean exists = userRepository.existsByUserId(userId);
+        return ResponseEntity.ok(Map.of("exists", exists));
+    }
+
+    @GetMapping("/check-phone")
+    public ResponseEntity<Map<String, Boolean>> checkPhone(@RequestParam String phone) {
+        boolean exists = userRepository.existsByPhone(phone);
+        return ResponseEntity.ok(Map.of("exists", exists));
+    }
+
+    @GetMapping("/check-email")
+    public ResponseEntity<Map<String, Boolean>> checkEmail(@RequestParam String email) {
+        boolean exists = userRepository.existsByEmail(email);
+        return ResponseEntity.ok(Map.of("exists", exists));
+    }
+
 }

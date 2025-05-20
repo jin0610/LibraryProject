@@ -3,9 +3,8 @@ import axios from "axios";
 const client = axios.create({
   baseURL: 'http://localhost:8080/',
   headers:{
-    "Content-Type":"application/*; charset=UTF-8",
-    "Accept": "*/*",
-    "Origin" : "http://localhost:3000"
+    "Content-Type": "application/json",
+    "Accept": "application/json"
   },
 });
 

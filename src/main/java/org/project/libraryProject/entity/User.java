@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @Setter
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "user")
 public class User {
@@ -37,16 +37,16 @@ public class User {
     private String email;
 
     @Column(nullable = false, length = 1)
-    private String gender;
+    private int gender; // 0 = M, 1 = F
 
     @Column(length = 200)
     private String address;
 
     @Column(name = "noti_status", nullable = false, length = 1)
-    private String notiStatus;
+    private int notiStatus;
 
     @Column(name = "user_level", nullable = false, length = 1)
-    private String userLevel;
+    private int userLevel;
 
     @CreatedDate
     @Column(name = "join_date", nullable = false, updatable = false)
@@ -54,7 +54,7 @@ public class User {
     private LocalDateTime joinDate;
 
     @Builder
-    public User(String userId, String userName, String userPwd, LocalDate birthdate, String phone, String email, String gender, String address, String notiStatus, String userLevel) {
+    public User(String userId, String userName, String userPwd, LocalDate birthdate, String phone, String email, int gender, String address, int notiStatus, int userLevel) {
         this.userId = userId;
         this.userName = userName;
         this.userPwd = userPwd;
