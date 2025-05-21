@@ -24,6 +24,9 @@ const Header = () => {
                                 <a className="nav-link" href="/sample">Sample</a>
                             </li>
                             <li className="header-menu-item nav-item">
+                                <a className="nav-link" href="/chat">Chat</a>
+                            </li>
+                            <li className="header-menu-item nav-item">
                                 <a className="nav-link" href="/notice">Notice</a>
                             </li>
                             <li className="header-menu-item nav-item">

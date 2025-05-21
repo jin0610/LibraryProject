@@ -12,20 +12,25 @@ const chattingForm = () => {
                         <div className='card-body p-0 chat-user-list-card-body scrollbar'>
                             <div className='tab-content'>
                                 <div className='tab-pane active card-body pb-0 chat-user-list ' id='newpost'>
-                                    <ul className='nav flex-column list '>
+                                    <ul className='nav flex-column list overflow-hidden w-100'>
                                         {users.map((user, idx) => (
                                             <li className='nav-item chat-user-list-li px-2 py-1 rounded-3' role="presentation">
-                                                <a className='nav-link d-flex  px-0 mx-0' data-bs-toggle="tab" href={"#"+user} role="tab" aria-selected="true">
-                                                    <div className="position-relative me-2 me-sm-0 me-xl-2">
+                                                <a className='nav-link d-flex px-0 mx-0 overflow-hidden align-items-center' data-bs-toggle="tab" href={"#"+user} role="tab" aria-selected="true">
+                                                    <div className="me-2 me-sm-0 me-xl-2">
                                                         <img src="https://cdn-icons-png.flaticon.com/512/11058/11058552.png" className='me-2 rounded-circle chat-user-list-img border border-2'></img>
                                                     </div>
-                                                    <div class="flex-1 d-xl-block">
+                                                    <div class="chat-user-list-info flex-grow-1 overflow-hidden">
                                                         <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="text-body fw-normal text-nowrap chat-user-list-name">{user}</h5>
+                                                            <h5 class="text-body fw-normal text-nowrap chat-user-list-name overflow-hidden text-truncate">{user}</h5>
                                                         </div>
-                                                        <div class="d-flex justify-content-between">
-                                                            <p class="mb-0 text-opacity-85  chat-user-list-message">This is a message from youThis is a message from you</p>
+                                                        <div class="d-flex">
+                                                            <p class="mb-0 text-opacity-85 text-truncate  chat-user-list-message ">This is a message from youThis is a message from you This is a message from youThis is a message from you</p>
                                                         </div>
+                                                    </div>
+                                                    <div className='chat-user-list-delete-btn'>
+                                                        <button className='btn btn-sm px-1'>
+                                                            <i class="bi bi-x-lg"></i>
+                                                        </button>
                                                     </div>
                                                 </a>
                                             </li>
@@ -47,20 +52,25 @@ const chattingForm = () => {
                         <div className='card-body p-0 chat-user-list-card-body scrollbar'>
                             <div className='tab-content'>
                                 <div className='tab-pane show active card-body pb-0 chat-user-list' id='newpost'>
-                                    <ul className='nav chat-thread-tab flex-column list'>
+                                    <ul className='nav flex-column list overflow-hidden w-100'>
                                         {users.map((user, idx) => (
                                             <li className='nav-item chat-user-list-li px-2 py-1 rounded-3' role="presentation">
-                                                <a className='nav-link d-flex  px-0 mx-0' data-bs-toggle="tab" href={"#"+user} role="tab" aria-selected="true">
-                                                    <div className="position-relative me-2 me-sm-0 me-xl-2">
+                                                <a className='nav-link d-flex px-0 mx-0 overflow-hidden align-items-center' data-bs-toggle="tab" href={"#"+user} role="tab" aria-selected="true">
+                                                    <div className="me-2 me-sm-0 me-xl-2">
                                                         <img src="https://cdn-icons-png.flaticon.com/512/11058/11058552.png" className='me-2 rounded-circle chat-user-list-img border border-2'></img>
                                                     </div>
-                                                    <div class="flex-1 d-xl-block w-100 ">
+                                                    <div class="chat-user-list-info flex-grow-1 overflow-hidden">
                                                         <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="text-body fw-normal text-nowrap chat-user-list-name">{user}</h5>
+                                                            <h5 class="text-body fw-normal text-nowrap chat-user-list-name overflow-hidden text-truncate">{user}</h5>
                                                         </div>
-                                                        <div class="d-flex justify-content-between w-100 ">
-                                                            <p class="mb-0 text-opacity-85 w-75 chat-user-list-message">This is a message from you</p>
+                                                        <div class="d-flex">
+                                                            <p class="mb-0 text-opacity-85 text-truncate  chat-user-list-message ">This is a message from youThis is a message from you This is a message from youThis is a message from you</p>
                                                         </div>
+                                                    </div>
+                                                    <div className='chat-user-list-delete-btn'>
+                                                        <button className='btn btn-sm px-1'>
+                                                            <i class="bi bi-x-lg"></i>
+                                                        </button>
                                                     </div>
                                                 </a>
                                             </li>
