@@ -1,4 +1,4 @@
-import NoticeForm from "../../components/noticeForm";
+import NoticeForm from "../../components/notice/noticeForm";
 import client from "../../client";
 import { useState, useEffect } from "react";
 // import axios from "axios";

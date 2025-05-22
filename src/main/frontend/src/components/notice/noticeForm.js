@@ -24,7 +24,7 @@ const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
                                     </button>
                                 </span>
                             </div>
-                            <a role="button" tabIndex="0" class="notice-write-btn btn btn-primary" href="#">글쓰기</a>    
+                            <a role="button" tabIndex="0" class="notice-write-btn btn btn-primary" href="/notice_write">글쓰기</a>    
                         </div>
                     </div>
                 </div>

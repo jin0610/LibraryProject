@@ -7,6 +7,7 @@ import Library from "./components/sample/Library";
 import LibraryPage from "./components/sample/Library";
 import BookListPage from "./pages/BookListPage";
 import ChatPage from './pages/ChatPage';
+import NoticeWritePage from './pages/NoticeWritePage';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/notice' element={<NoticePage/>}/>
+        <Route path='/notice_write' element={<NoticeWritePage/>}/>
         <Route path='/chat' element={<ChatPage/>}/>
         <Route path='/sample' element={<SamplePage/>}/>
         <Route path='/Library' element={<LibraryPage />}/>
