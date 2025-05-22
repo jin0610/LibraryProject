@@ -1,45 +1,289 @@
-.chat-page-form{
-    min-height: calc(100vh - 15rem);
-    /* border: 3px #000000 !important; */
+.scrollbar{
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.text-opacity-85{
+    opacity: 0.85;
+    font-size: .8rem;
 }
 
-.chat-box{
-    height: 100%;
-    background-color: aqua;
+.text-overflow-ellipsis{
+    text-overflow: ellipsis !important;
 }
-
-.chat-box-header{
-    height: 20%;
-    padding: 1rem;
-    align-items: center;
-    vertical-align: middle;
-
-}
-
-.chat-img{
-    width: 6rem;
-    aspect-ratio: 1.0;
-    display: inline-block;
-    vertical-align: middle;
-    padding:0 !important;
+.chat-container{
+    margin-top:5rem;
+    max-height:calc(100vh * 0.7);
     
 }
 
-.chat-img > img{
+.chat-row, .chat-user-list-card, .chat-user-list-card > .card{
+    height:100%;
+    
+}
+
+.chat-user-list-card > .card{
+    min-height:calc(100vh * 0.7);
+    max-height:calc(100vh * 0.7);
+}
+
+.chat-row, .chat-user-list-offcanvas, .chat-user-list-offcanvas > .card{
+    height:100%;
+    border: none;
+}
+
+.chat-user-list-offcanvas > .card{
+    /* min-height:calc(100vh * 0.7); */
+    max-height:100%;
+}
+
+.chat-user-list-offcanvas .card .card-header{
+    justify-items: end !important;
+    background-color: transparent;
+    border-bottom: 0;
+}
+
+.btn-close{
+    position: absolute;
+    right:.5rem;
+    top:1rem;
+}
+
+.chat-user-list-li > a{
+    justify-content:start;
+}
+
+.chat-user-list-li:has(.active){
+    /* border: 1px solid #dee2e6 !important;
+    border-width: 2px !important; */
+    background-color:#dee2e6;
+}
+
+
+.chat-user-list{
+    height:100%;
+    overflow:auto;
+}
+.chat-user-list-img{
+    height: 3rem;
+}
+
+.chat-user-list-name{
+    font-size: 1rem;
+}
+
+.chat-user-list-li{
+    max-width: 100%;
+    /* display: block; */
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+    vertical-align: middle;
+}
+
+.chat-user-list-message{
+    /* max-width: 45%; */
+    display: block;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chat-user-list-delete-btn {
+  display: none; /* 기본은 숨김 */
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.nav-item.chat-user-list-li:hover .chat-user-list-delete-btn,
+.nav-item.chat-user-list-li.active .chat-user-list-delete-btn {
+  display: flex; /* hover 또는 active 시 보이게 */
+}
+
+.chat-user-list-delete-btn button{
+    background-color: transparent;
+    border-radius: 0.3rem;
+    border:none;
+}
+
+.chat-user-list-content{
+    font-size:.9rem;
+}
+.chat-user-list-nav-btn{
+    background-color: lightgray !important;
+    color:black;
+}
+
+/* 채팅 폼 */
+.chat-form{
+    min-height:calc(100vh * 0.7);
+    max-height:calc(100vh * 0.7);
+}
+
+.chat-form-header{
+    /* height:10%; */
+    background-color: transparent;
+}
+
+.chat-form-header-img{
+    height:2.5rem;
+}
+
+.chat-form-hedaer-name{
+    font-size : 1rem;
+}
+
+.chat-form-header-delete-chat{
+    background-color: lightgray;
+}
+
+/* 채팅 페이지 메시지 style */
+.text-body-tertiary{
+    opacity: 0.85;
+    font-size: .8rem;
+}
+
+.chat-message{
     width:100%;
-    
 }
 
-.chat-info{
-    vertical-align: baseline;   
+.chat-message:has(.sent-message-content){
+    justify-content: flex-end !important;
+    justify-items: end !important;
 }
 
-.chat-info > p{
-    font-size: 2rem;
-    vertical-align: top;   
+.w-100:has(.sent-message-content){
+    justify-items: end !important;
 }
 
-.chatting-box{
-    min-height:80%;
-    color:blanchedalmond;
+.flex-end-center{
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align:center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.received-message-img{
+    width:2rem;
+}
+
+
+.chat-form-footer{
+    background-color: transparent;
+}
+
+.card-textarea{
+    width: 100%;
+    font-size:1rem;
+
+}
+
+.btn-clip{
+    background-color: lightgrey;
+}
+
+@media (max-width: 576px) {
+    .w-ssm-25 {
+        width: 25% !important;
+    }
+
+    .w-ssm-50 {
+        width: 50% !important;
+    }
+
+    .w-ssm-75 {
+        width: 75% !important;
+    }
+
+    .w-ssm-100 {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .w-sm-25, .w-25 {
+        width: 25% !important;
+    }
+
+    .w-sm-50, .w-50 {
+        width: 50% !important;
+    }
+
+    .w-sm-75, .w-75 {
+        width: 75% !important;
+    }
+
+    .w-sm-100, .w-100 {
+        width: 100% !important;
+    }
+}
+@media (min-width: 768px) {
+    .w-md-25, .w-25 {
+        width: 25% !important;
+    }
+
+    .w-md-50, .w-50 {
+        width: 50% !important;
+    }
+
+    .w-md-75, .w-75 {
+        width: 75% !important;
+    }
+
+    .w-md-100, .w-100 {
+        width: 100% !important;
+    }
+}
+@media (min-width: 992px) {
+    .w-lg-25, .w-25 {
+        width: 25% !important;
+    }
+
+    .w-lg-50, .w-50 {
+        width: 50% !important;
+    }
+
+    .w-lg-75, .w-75 {
+        width: 75% !important;
+    }
+
+    .w-lg-100, .w-100 {
+        width: 100% !important;
+    }
+}
+@media (min-width: 1200px) {
+    .w-xl-25, .w-25 {
+        width: 25% !important;
+    }
+
+    .w-xl-50, .w-50 {
+        width: 50% !important;
+    }
+
+    .w-xl-75, .w-75 {
+        width: 75% !important;
+    }
+
+    .w-xl-100, .w-100 {
+        width: 100% !important;
+    }
+}
+@media (min-width: 1400px) {
+    .w-xxl-25, .w-25 {
+        width: 25% !important;
+    }
+
+    .w-xxl-50, .w-50 {
+        width: 50% !important;
+    }
+
+    .w-xxl-75, .w-75 {
+        width: 75% !important;
+    }
+
+    .w-xxl-100, .w-100 {
+        width: 100% !important;
+    }
 }
