@@ -20,7 +20,7 @@ public class UserRegisterDTO {
     private String phone;
     private String email;
     private String address;
-    private String gender; // "M" or "F"
+    private String gender;
     private String notiStatus;
 
     public User toEntity(String encodedPwd) {
@@ -33,7 +33,7 @@ public class UserRegisterDTO {
                 .email(email)
                 .address(address)
                 .gender("F".equalsIgnoreCase(gender) ? 1 : 0)
-                .notiStatus("N".equalsIgnoreCase(notiStatus) ? 1 : 0)
+                .notiStatus("N".equalsIgnoreCase(notiStatus) ? 0 : 1)
                 .userLevel(0)
                 .build();
     }

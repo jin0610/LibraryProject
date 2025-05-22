@@ -1,6 +1,15 @@
 import "./css/header.css";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+    const navigate = useNavigate();
+    const isLoggedIn = !!localStorage.getItem("token");
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        alert("로그아웃 되었습니다.");
+        navigate("/");
+    };
     
     return(
         <header class="mb-1">
@@ -26,8 +35,12 @@ const Header = () => {
                             <li class="header-menu-item nav-item">
                                 <a class="nav-link" href="/notice">Notice</a>
                             </li>
-                            <li class="header-menu-item nav-item">
-                                <a class="nav-link" href="/auth/login">Login</a>
+                            <li className="header-menu-item nav-item">
+                                {isLoggedIn ? (
+                                    <a className="nav-link" href="javascript:void(0);" onClick={handleLogout}>Logout</a>
+                                ) : (
+                                    <a className="nav-link" href="/auth/login">Login</a>
+                                )}
                             </li>
                         </ul>
                     </div>

@@ -2,10 +2,15 @@ package org.project.libraryProject.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.project.libraryProject.dto.UserRegisterDTO;
+import org.project.libraryProject.repository.UserRepository;
 import org.project.libraryProject.service.LoginService;
+import org.project.libraryProject.service.impl.LoginServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.Map;
 
 @Slf4j
@@ -14,10 +19,14 @@ import java.util.Map;
 @RequestMapping("/auth")
 public class LoginController {
 
-    private final LoginService loginService;
+    private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 
-    public LoginController(LoginService loginService) {
+    private final LoginService loginService;
+    private final UserRepository userRepository;
+
+    public LoginController(LoginService loginService, UserRepository userRepository) {
         this.loginService = loginService;
+        this.userRepository = userRepository;
     }
 
     @PostMapping("/register")
@@ -44,4 +53,9 @@ public class LoginController {
         return ResponseEntity.ok(Map.of("exists", exists));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserRegisterDTO request) {
+        String token = loginService.login(request);
+        return ResponseEntity.ok(Collections.singletonMap("token", token));
+    }
 }

@@ -5,4 +5,6 @@ import org.project.libraryProject.dto.UserRegisterDTO;
 public interface LoginService {
 
     public String registerUser(UserRegisterDTO dto);
+
+    public String login(UserRegisterDTO req);
 }

@@ -11,7 +11,7 @@ public class UserResponseDTO {
     private String userName;
     private String phone;
     private String email;
-    private String gender; // "M" or "F"
+    private String gender;
     private String birthdate;
     private String notiStatus;
     private String joinDate;
@@ -24,7 +24,7 @@ public class UserResponseDTO {
                 .email(user.getEmail())
                 .gender(user.getGender() == 1 ? "F" : "M")
                 .birthdate(user.getBirthdate().toString())
-                .notiStatus(user.getNotiStatus() == 1 ? "N" : "Y")
+                .notiStatus(user.getNotiStatus() == 1 ? "Y" : "N")
                 .joinDate(user.getJoinDate().toString())
                 .build();
     }
