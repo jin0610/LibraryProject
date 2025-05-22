@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -16,6 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "org.project.libraryProject.repository")
+@EnableJpaAuditing
 public class JpaConfig {
 
     @Bean

@@ -35,6 +35,7 @@ dependencies {
 
     // Spring Data JPA
     implementation 'org.springframework.data:spring-data-jpa:2.7.14'
+    implementation 'org.springframework:spring-aspects:5.3.14'
 
     // Persistence & ORM
     implementation 'javax.persistence:javax.persistence-api:2.2'
@@ -56,9 +57,17 @@ dependencies {
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
     // Web Security
-//    implementation 'org.springframework.security:spring-security-config:5.3.0.release'
     implementation "org.springframework.security:spring-security-web:5.4.0"
     implementation "org.springframework.security:spring-security-config:5.4.0"
+
+    //Log
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+
+    //Jwt
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 }
 
 test {
