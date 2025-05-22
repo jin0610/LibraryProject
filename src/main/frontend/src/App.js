@@ -7,12 +7,9 @@ import Library from "./components/sample/Library";
 import LibraryPage from "./components/sample/Library";
 import BookListPage from "./pages/BookListPage";
 import ChatPage from './pages/ChatPage';
-<<<<<<< HEAD
 import NoticeWritePage from './pages/NoticeWritePage';
-=======
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
->>>>>>> 80c4e8afe87473e068dec7660b9542db8ab311ff
 
 function App() {
   
