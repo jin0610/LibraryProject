@@ -1,12 +1,21 @@
 import "./css/mainForm.css";
-import React from "react";
+import React, {useState} from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import {Link} from "react-router-dom"; // 부트스트랩 사용
 
+
+
 const MainForm = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown  = () => {
+        setIsDropdownOpen(prevState => !prevState); // 드롭다운 열고 닫기
+    };
+
+
     return (
         <div>
-            {/* 검색 섹션 */}
+            {/* 검색 섹션 시작 */}
             <div className="section section1" id="section1">
                 <div className="container searchbox">
                     <div className="searchgroup input-group">
@@ -20,27 +29,33 @@ const MainForm = () => {
                 <i className="bi bi-search"></i>
               </button>
             </span>
-                        <div className="bestmain"> 인기순위 🔽</div>
+                        {/* 검색 섹션 끝 */}
+            <div className="bestmain"> 인기 검색어 🔽</div>{/*나중에 api로 띄울 거*/}
                     </div>
-                </div>
+            </div>
 
+            {/*드롭다운*/}
                 <nav className="nav-container">
+
                     <ul className="nav-menu">
-                        <li>
-                  {/*    <a href="#guid">도서관 안내</a>*/}
+                        <li className="dropdown">
+
+                            <a href="/" className="information" onClick={toggleDropdown}>도서관 안내</a>
+                            {isDropdownOpen && (
+                            <ul className="dropdown-menu">
+                                <li><Link to="">도서관 소개</Link></li>
+                                <li><Link to="/">결제/환불 안내</Link></li>
+                                <li><Link to="/">자주 묻는 질문</Link></li>
+                                <li><Link to="/">문의하기</Link></li>
+                            </ul>
+                            )}
                         </li>
-                        <li>
-                           // {/*<a href="#searchBook">자료검색</a>*/}
-                        </li>
-                        <li>
-                            {/*<a href="#recommendBook">추천도서</a>*/}
-                        </li>
-                        <li>
-                       {/*     <a href="#newBook">신상도서</a>*/}
-                        </li>
-                        <li>중고서점</li>
-                        <li>행사</li>
-                        <li>나의 공간</li>
+                        <li><a href="/">자료검색</a></li>
+                        <li><a href="/">추천도서</a></li>
+                        <li><a href="/">신상도서</a></li>
+                        <li><a href="/">중고서점</a></li>
+                        <li><a href="/">행사</a></li>
+                        <li><a href="/">나의 공간</a></li>
                     </ul>
                 </nav>
             </div>

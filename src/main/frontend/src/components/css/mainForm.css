@@ -1,6 +1,6 @@
-/* mainForm.css */
 
-/* 왼쪽 정보 박스 스타일 */
+
+/* 책바다 책이음 정보 */
 .info-box {
     border: 1px solid #007bff;
     padding: 20px;
@@ -22,7 +22,7 @@
 .info-btn {
     margin-top: 10px;
 }
-
+/* 책바다 책이음 정보 끝*/
 /* 오른쪽 회색 버튼 스타일 */
 .right-buttons .btn-gray {
     background-color: #f0f0f0;
@@ -42,6 +42,109 @@
     display: flex;
     justify-content: space-between;
 }
-.bestmain{
 
+
+/* 인기 순위 */
+.bestmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4%;
+}
+
+/* nav바 */
+.nav-container{
+    justify-content: center; /*nav바 가운데로*/
+    /*border: solid 1px red;*/
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+
+.nav-menu{
+    flex-direction: row;
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    padding: 10px 50px;
+    margin: 0;
+}
+
+
+.nav-menu li a {
+    text-decoration: none; /*언더라인 제거*/
+    color: #444;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+
+.nav-menu li a:hover{
+    color: #1ea10e;
+}
+
+
+/* 드롭다운 */
+.nav-menu li.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top:100%;
+    left : 0;
+    background-color: lightgray;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    color: #444;
+    padding : 5px 10px;
+    display: block;
+}
+
+
+.dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+    .bestmain{
+        font-size: 12px;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-menu{
+        flex-direction: column;
+        gap:10px;
+    }
+    .nav-menu li a {
+        font-size: 12px;
+        white-space: nowrap; /*줄 바꿈 방지*/
+        display: inline-block;
+    }
+    .nav-menu li{
+        width: 100%;
+    }
+
+    .menu-button {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
 }
