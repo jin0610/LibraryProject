@@ -1,18 +1,11 @@
 import "./css/mainForm.css";
-import React, {useState} from "react";
+import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import {Link} from "react-router-dom"; // 부트스트랩 사용
 
 
 
 const MainForm = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const toggleDropdown  = () => {
-        setIsDropdownOpen(prevState => !prevState); // 드롭다운 열고 닫기
-    };
-
-
     return (
         <div>
             {/* 검색 섹션 시작 */}
@@ -30,33 +23,81 @@ const MainForm = () => {
               </button>
             </span>
                         {/* 검색 섹션 끝 */}
-            <div className="bestmain"> 인기 검색어 🔽</div>{/*나중에 api로 띄울 거*/}
+                        <div className="bestmain"> 인기 검색어 🔽</div>
+                        {/*나중에 api로 띄울 거*/}
                     </div>
-            </div>
+                </div>
 
-            {/*드롭다운*/}
-                <nav className="nav-container">
+                {/*드롭다운*/}
+                <nav className="navbar navbar-expand-lg navbar-white bg-white">
+                    <div className="container-fluid">
 
-                    <ul className="nav-menu">
-                        <li className="dropdown">
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                {/* Dropdown Menu */}
+                                <li className="nav-item dropdown">
+                                    <a
+                                        className="nav-link dropdown-toggle"
+                                        href="#"
+                                        id="navbarDropdown"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        도서관 안내
+                                    </a>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <a className="dropdown-item" href="#">
+                                                Action
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className="dropdown-item" href="#">
+                                                Another action
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className="dropdown-item" href="#">
+                                                Something else here
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
 
-                            <a href="/" className="information" onClick={toggleDropdown}>도서관 안내</a>
-                            {isDropdownOpen && (
-                            <ul className="dropdown-menu">
-                                <li><Link to="">도서관 소개</Link></li>
-                                <li><Link to="/">결제/환불 안내</Link></li>
-                                <li><Link to="/">자주 묻는 질문</Link></li>
-                                <li><Link to="/">문의하기</Link></li>
+                                {/* Regular Nav Items */}
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/search">자료검색</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/recommend">추천도서</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/new-books">신상도서</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/used-books">중고서점</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/events">행사</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/my-space">나의 공간</Link>
+                                </li>
                             </ul>
-                            )}
-                        </li>
-                        <li><a href="/">자료검색</a></li>
-                        <li><a href="/">추천도서</a></li>
-                        <li><a href="/">신상도서</a></li>
-                        <li><a href="/">중고서점</a></li>
-                        <li><a href="/">행사</a></li>
-                        <li><a href="/">나의 공간</a></li>
-                    </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
 

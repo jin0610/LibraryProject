@@ -114,6 +114,12 @@
     padding : 5px 10px;
     display: block;
 }
+#navbar-dark-example {
+    background-color: white;
+    border-color: white;
+    color:black;
+    toggle-group : none;
+}
 
 
 .dropdown-menu li a:hover {
