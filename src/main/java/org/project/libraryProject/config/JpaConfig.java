@@ -17,13 +17,14 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "org.project.libraryProject.repository")
-@EnableJpaAuditing  // JPA Auditing 활성화
+@EnableJpaAuditing
 public class JpaConfig {
 
     @Bean
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://mysql-db-library-db-proj.g.aivencloud.com:24159/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&autoReconnect=true");
+
         config.setUsername("user");
         config.setPassword("1234");
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");

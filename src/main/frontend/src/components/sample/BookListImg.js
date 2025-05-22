@@ -62,9 +62,9 @@ const BookListImg = ({books, pageChange, currentPage, pageButtons}) => {
                                     <ul class="pagination mt-2 mt-md-0" role="navigation" aria-label="Pagination">
                                         <li class="previous disabled">
                                             <button class="page-link mx-1 rounded " tabindex="-1" role="button"
-                                                    aria-disabled="true" aria-label="Previous page" rel="prev"
-                                                    onClick={() => pageChange(currentPage - 1)}
-                                                    disabled={currentPage === 1}>
+                                            aria-disabled="true" aria-label="Previous page" rel="prev"
+                                            onClick={() => pageChange(currentPage - 1)}
+                                            disabled={currentPage === 1}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px"
                                                      viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

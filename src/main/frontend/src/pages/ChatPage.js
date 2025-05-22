@@ -1,18 +1,15 @@
 import React from "react";
 import Header from "../components/header";
 import PageBlock from "../components/PageBlock";
-import NoticeContainer from "../containers/notice/NoticeContainer";
+import ChattingContainer from "../containers/chat/ChattingContainer";
 
-
-const NoticePage = () =>{
-
+const ChatPage = () => {
     return(
         <PageBlock>
             <Header/>
-            <NoticeContainer/>
+            <ChattingContainer/>
         </PageBlock>
-
     )
 }
 
-export default NoticePage;
+export default ChatPage;

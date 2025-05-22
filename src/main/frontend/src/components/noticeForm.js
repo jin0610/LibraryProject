@@ -1,8 +1,8 @@
 import "./css/noticeForm.css"
 import moment from 'moment';
 
-const noticeForm = (props) =>{
-    const {noticeList} = props
+const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
+    // const {noticeList, pageChange, currentPage, pageButtons} = props
 
     const regDateFormat = (date) =>{
         return moment(date).format('YYYY-MM-DD')
@@ -12,7 +12,7 @@ const noticeForm = (props) =>{
         <div class="container mt-5">
             <div class="mb-5 row">
                 <div class="col-md-12">
-                    <div class="d-md-flex justify-content-between align-items-center">
+                    <div class="d-md-flex justify-content-between align-items-center mt-5">
                         <div>
                             <h2>공지사항</h2>
                         </div>
@@ -76,37 +76,29 @@ const noticeForm = (props) =>{
                         </table>
                     </div>
                     {/* <!-- pagination --> */}
-                    <div class="mt-3 row">
-                        <div class="col ">
-                            <div class="justify-content-between align-items-center ">
-                                <ul class="pagination mt-2 mt-md-0" role="navigation" aria-label="Pagination">
-                                    <li class="previous disabled">
-                                        <a class="page-link mx-1 rounded " tabIndex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="15 18 9 12 15 6"></polyline>
-                                        </svg>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a rel="canonical" role="button" class="page-link mx-1 rounded" tabIndex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a rel="next" role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 2">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 3">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 4">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a role="button" class="page-link mx-1 rounded" tabIndex="0" aria-label="Page 5">5</a>
-                                    </li>
-                                    <li class="next">
-                                        <a class="page-link mx-1 rounded" tabIndex="0" role="button" aria-disabled="false" aria-label="Next page" rel="next">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline>
+                    <div className="mt-3 row">
+                        <div className="col ">
+                            <div className="justify-content-between align-items-center ">
+                                <ul className="pagination mt-2 mt-md-0" role="navigation" aria-label="Pagination">
+                                    <li className="previous disabled">
+                                        <button className="page-link mx-1 rounded " tabIndex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev" onClick={() => pageChange(currentPage - 1)}
+                                        disabled={currentPage === 1}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="15 18 9 12 15 6"></polyline>
                                             </svg>
-                                        </a>
+                                        </button>
+                                    </li>
+                                    {pageButtons()}
+                                    <li className="next">
+                                        <button className="page-link mx-1 rounded" tabIndex="0" role="button"
+                                            aria-disabled="false" aria-label="Next page" rel="next"
+                                            onClick={() => pageChange(currentPage + 1)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
