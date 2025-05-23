@@ -6,7 +6,7 @@ const noticeWriteForm = () =>{
                 <div class="col-md-12">
                     <div class="d-md-flex justify-content-between align-items-center mt-5">
                         <div>
-                            <h2 style="font-weight: bold;">공지사항 글쓰기</h2>
+                            <h2 className="fw-bold">공지사항 글쓰기</h2>
                         </div>
                     </div>
                 </div>
@@ -55,9 +55,9 @@ const noticeWriteForm = () =>{
                         </div>
                     </div>
 
-                    <div class="form-btn-group my-5 w-100">
-                        <button type="submit" class="btn btn-primary notice-form-btn">확인</button>
-                        <button type="button" class="btn btn-secondary notice-form-btn">취소</button>
+                    <div className='d-flex justify-content-center gap-md-5 gap-3 pb-5 mt-4'>
+                        <button type="submit" class="btn btn-primary justify-content-center notice-form-btn">확인</button>
+                        <button type="button" class="btn btn-secondary justify-content-center notice-form-btn">취소</button>
                     </div>
                 
             </form>
