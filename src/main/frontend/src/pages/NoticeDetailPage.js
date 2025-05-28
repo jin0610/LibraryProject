@@ -1,18 +1,18 @@
 import React from "react";
 import Header from "../components/header";
 import PageBlock from "../components/PageBlock";
-import NoticeListContainer from "../containers/notice/NoticeListContainer";
+import NoticeDetailContainer from "../containers/notice/NoticeDetailContainer";
 
 
-const NoticeListPage = () =>{
+const NoticeDetailPage = () =>{
 
     return(
         <PageBlock>
             <Header/>
-            <NoticeListContainer/>
+            <NoticeDetailContainer/>
         </PageBlock>
 
     )
 }
 
-export default NoticeListPage;
+export default NoticeDetailPage;

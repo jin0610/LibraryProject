@@ -33,7 +33,7 @@ const Header = () => {
                                 <a class="nav-link" href="/sample">Sample</a>
                             </li>
                             <li class="header-menu-item nav-item">
-                                <a class="nav-link" href="/notice_list">Notice</a>
+                                <a class="nav-link" href="/notice">Notice</a>
                             </li>
                             <li className="header-menu-item nav-item">
                                 {isLoggedIn ? (

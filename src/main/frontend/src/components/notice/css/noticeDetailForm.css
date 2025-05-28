@@ -1,0 +1,19 @@
+.notice-content{
+    min-height: calc(100vh * 0.5);
+}
+
+.notice-btn{
+    align-items: end;
+    
+
+}
+
+.notice-go-to-list-btn{
+    min-width:15%;
+}
+
+@media(max-width:425px){
+    .notice-go-to-list-btn{
+        min-width:25%;
+    }
+}
