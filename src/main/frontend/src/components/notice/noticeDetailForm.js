@@ -1,10 +1,8 @@
 import "./css/noticeDetailForm.css"
 
-const noticeDetailForm = () =>{
-    // const {noticeList, pageChange, currentPage, pageButtons} = props
-
+const noticeDetailForm = ()=>{
     return(
-        <div class="container my-5">
+                <div class="container my-5">
             <div class="mb-5 row g-3">
                 <div class="col-md-12">
                     <div class="d-md-flex justify-content-between align-items-center mt-5">
@@ -33,7 +31,7 @@ const noticeDetailForm = () =>{
             </div>
             <hr className="mb-4"/>
             <div className="d-flex justify-content-end notice-btn">
-                <button className="btn btn-secondary notice-go-to-list-btn">목록</button>
+                <a className="btn btn-secondary notice-go-to-list-btn" href="/notice">목록</a>
             </div>
         </div>
     )

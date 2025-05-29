@@ -1,12 +1,9 @@
-import noticeDetailForm from "../../components/notice/noticeDetailForm";
-import client from "../../client";
-import { useState, useEffect } from "react";
-// import axios from "axios";
+import NoticeDetailForm from "../../components/notice/noticeDetailForm"
 
 const NoticeDetailContainer = () =>{
 
     return(
-        <noticeDetailForm/>
+        <NoticeDetailForm/>        
     )
 }
 
