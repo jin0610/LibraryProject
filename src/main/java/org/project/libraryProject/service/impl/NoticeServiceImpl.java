@@ -40,4 +40,8 @@ public class NoticeServiceImpl implements NoticeService {
 //        System.out.println("Fetched noticeList : " + noticeList);
 //        return noticeList;
 //    };
+
+    public Notice getNoticebyId(int noticeId){
+        return noticeRepository.findNoticeByNoticeId(noticeId);
+    }
 }

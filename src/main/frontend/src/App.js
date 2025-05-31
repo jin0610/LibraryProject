@@ -20,7 +20,7 @@ function App() {
         <Route path='/' element={<MainPage/>}/>
         {/* 공지사항 */}
         <Route path='/notice' element={<NoticePage/>}/>
-        <Route path='/notice/detail' element={<NoticeDetailPage/>}/>
+        <Route path='/notice/detail/:id' element={<NoticeDetailPage/>}/>
         <Route path='/notice/write' element={<NoticeWritePage/>}/>
         <Route path='/chat' element={<ChatPage/>}/>
         <Route path='/sample' element={<SamplePage/>}/>

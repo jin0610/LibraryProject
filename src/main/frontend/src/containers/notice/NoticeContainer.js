@@ -1,15 +1,18 @@
 import NoticeForm from "../../components/notice/noticeForm";
 import client from "../../client";
 import { useState, useEffect } from "react";
-// import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const NoticeContainer = () =>{
 
+    const navigate = useNavigate();
+    
     const [noticeList, setNoticeList] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
     const pageChange = (page) => {
-        client.get(`/api/notice?page=${page}`)
+        client.get(`/notice?page=${page}`)
         .then(res => {
             console.log(res.data)
             setCurrentPage(page);
@@ -17,6 +20,15 @@ const NoticeContainer = () =>{
             setTotalPages(res.data.totalPages);
         }).catch(err => {
             console.log("error", err);
+        });
+    }
+
+    const onTitleClick = (id, e) =>{
+        console.log("onTitleClick id", id);
+        navigate(`/notice/detail/${id}`, {
+            state: {
+                noticeId: id
+            }
         });
     }
 
@@ -50,6 +62,7 @@ const NoticeContainer = () =>{
             pageChange={pageChange}
             currentPage={currentPage}
             pageButtons={pageButtons}
+            onTitleClick = {onTitleClick}
         />
     )
 }

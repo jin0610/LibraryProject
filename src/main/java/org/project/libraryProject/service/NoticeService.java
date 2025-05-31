@@ -9,4 +9,6 @@ public interface NoticeService {
 
     // 모든 공지사항 목록 가져오기
     Page<Notice> getNoticeList(int page);
+
+    Notice getNoticebyId(int noticeId);
 }

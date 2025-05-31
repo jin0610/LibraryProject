@@ -1,9 +1,9 @@
 import "./css/noticeForm.css"
 import moment from 'moment';
 
-const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
-    // const {noticeList, pageChange, currentPage, pageButtons} = props
-
+const NoticeForm = (props) =>{
+    const {noticeList, pageChange, currentPage, pageButtons, onTitleClick} = props
+    
     const regDateFormat = (date) =>{
         return moment(date).format('YYYY-MM-DD')
     }
@@ -52,14 +52,14 @@ const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody>                                
                                 {noticeList.map((notice, index) =>(
                                     <tr class="notice-table-row" key={index}>
                                         <td colSpan="1" class="align-middle border-top-0">
-                                            <div>{notice.notice_id}</div>
+                                            <div>{index + 1}</div>
                                         </td>
                                         <td colSpan="4" class="align-middle border-top-0">
-                                            <div>{notice.title}</div>
+                                            <div className="pe-auto notice-title" value={notice.noticeId} onClick={e => onTitleClick(notice.noticeId, e)}>{notice.title}</div>
                                         </td>
                                         <td colSpan="2" class="align-middle border-top-0">
                                             <div>{notice.writer}</div>
@@ -71,7 +71,7 @@ const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
                                             <div>34</div>
                                         </td>
                                     </tr>
-                                ))}                               
+                                ))}        
                             </tbody>
                         </table>
                     </div>
@@ -110,4 +110,4 @@ const noticeForm = ({noticeList, pageChange, currentPage, pageButtons}) =>{
     )
 }
 
-export default noticeForm;
+export default NoticeForm;
