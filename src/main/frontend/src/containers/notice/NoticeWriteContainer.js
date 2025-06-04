@@ -2,6 +2,7 @@ import NoticeWriteForm from "../../components/notice/noticeWriteForm";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import moment from 'moment';
+import client from "../../client";
 
 const NoticeWriteContainer = () =>{
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ const NoticeWriteContainer = () =>{
         content : "",
         writer : "user001",
         regDate : "",
-        files : [null,null,null,null,null]
+        // files : [null,null,null,null,null]
     });
     const regDateFormat = (date) =>{
         return moment(date).format('YYYY-MM-DD hh:mm:ss')
@@ -25,9 +26,7 @@ const NoticeWriteContainer = () =>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // 여기에 백엔드 API로 전송하는 로직 추가
-        // navigate('/notice');
-        formData.regDate = regDateFormat(new Date());
+        formData.regDate = new Date();
         if (formData.title.length <= 0){
             alert("제목을 입력해주세요.")
             return false
@@ -37,8 +36,19 @@ const NoticeWriteContainer = () =>{
             alert("내용을 입력해주세요.")
             return false
         }
-
-        console.log("전송할 데이터:", formData);
+        // console.log("전송할 데이터:", formData);
+        client.post('/notice/write', formData)
+        .then( res => {
+            // console.log(res)
+            if (res.data === 'SUCCESS'){
+                alert('글이 등록되었습니다.')
+                navigate('/notice');
+            } else{
+                alert('등록 실패하였습니다.')
+            }
+        }).catch(err => {
+            console.log("error", err)
+        })
     };
 
     const handleCancel = (e) => {

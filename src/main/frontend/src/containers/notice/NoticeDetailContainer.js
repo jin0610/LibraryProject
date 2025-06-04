@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 
 
 const NoticeDetailContainer = () =>{
+    const navigate = useNavigate();
     const location = useLocation()
     const data = {...location.state};
-    // const noticeId = data.noticeId
+    
     let {id} = useParams();
     const noticeId = data ? data.noticeId : id
 
@@ -28,9 +29,31 @@ const NoticeDetailContainer = () =>{
             console.log("error", err)
         })
     }    
+
+    // 공지사항 글 삭제
+    const deleteNotice = (noticeId) => {
+        client.get(`/notice/delete?id=${noticeId}`)
+        .then(res => {
+            console.log(res.data)
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    // 공지사항 글 수정
+    const editNotice = (noticeId) =>{
+        navigate(`/notice/detail/${noticeId}`, {
+            state: {
+                noticeId : noticeId
+            }
+        })
+    }
+
+    
     useEffect(() => {
         getNoticeContent(noticeId);
     },[noticeId])
+
     return(
         <NoticeDetailForm
             noticeContent = {noticeContent}

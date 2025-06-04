@@ -27,7 +27,8 @@ const NoticeWriteForm = (props) =>{
                             value={formData.content} onChange={(e) => handleChange(e)} placeholder="내용을 입력해주세요." required/>
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    {/* file 유형 : pdf, 이미지 파일 */}
+                    {/* <div class="row mb-3">
                         <label for="noticeFile1" class="col-xl-2 col-lg-3 d-none d-lg-block col-form-label align-content-center">첨부파일1</label>
                         <div class="col-xl-10 col-lg-9 col-12">
                             <input type="file" class="form-control" id="noticeFile1" value={formData.files[0]} onChange={(e) => handleChange(e)}/>
@@ -56,7 +57,7 @@ const NoticeWriteForm = (props) =>{
                         <div class="col-xl-10 col-lg-9 col-12">
                             <input type="file" class="form-control" id="noticeFile5" value={formData.files[4]} onChange={(e) => handleChange(e)}/>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className='d-flex justify-content-center gap-md-5 gap-3 pb-5 mt-4'>
                         <button type="submit" class="btn btn-primary justify-content-center notice-form-btn">확인</button>

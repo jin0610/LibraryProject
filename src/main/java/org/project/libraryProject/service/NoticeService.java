@@ -1,5 +1,6 @@
 package org.project.libraryProject.service;
 
+import org.project.libraryProject.dto.NoticeWriteDTO;
 import org.project.libraryProject.entity.Notice;
 import org.springframework.data.domain.Page;
 
@@ -11,4 +12,7 @@ public interface NoticeService {
     Page<Notice> getNoticeList(int page);
 
     Notice getNoticebyId(int noticeId);
+
+    public String writeNotice(NoticeWriteDTO dto);
+
 }

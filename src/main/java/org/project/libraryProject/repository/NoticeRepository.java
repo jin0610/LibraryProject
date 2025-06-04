@@ -13,4 +13,5 @@ public interface NoticeRepository extends JpaRepository<Notice, Integer> {
     Page<Notice> findAll(Pageable pageable);
 
     Notice findNoticeByNoticeId (int noticeId);
+
 }

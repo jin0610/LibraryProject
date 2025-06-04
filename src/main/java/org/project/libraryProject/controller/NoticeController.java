@@ -1,10 +1,11 @@
 package org.project.libraryProject.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.project.libraryProject.entity.Book;
+import org.project.libraryProject.dto.NoticeWriteDTO;
 import org.project.libraryProject.entity.Notice;
 import org.project.libraryProject.service.NoticeService;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -34,8 +35,10 @@ public class NoticeController {
         return noticeService.getNoticebyId(noticeId);
     }
 
-//    @PostMapping("/write")
-//    public void putNotice(){
-//        return false;
-//    }
+    @PostMapping("/write")
+    public ResponseEntity<String> writeNotice(@RequestBody NoticeWriteDTO dto){
+        System.out.println(dto);
+        String result = noticeService.writeNotice(dto);
+        return ResponseEntity.ok(result);
+    }
 }

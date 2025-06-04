@@ -32,4 +32,12 @@ public class Notice {
     @Column(name="reg_date", nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date regDate;
+
+    @Builder
+    public Notice(String title, String content, String writer, Date regDate){
+        this.title = title;
+        this.content = content;
+        this.writer = writer;
+        this.regDate = regDate;
+    }
 }

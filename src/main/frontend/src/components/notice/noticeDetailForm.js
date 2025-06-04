@@ -32,7 +32,9 @@ const noticeDetailForm = (props)=>{
                 {noticeContent.content}
             </div>
             <hr className="mb-4"/>
-            <div className="d-flex justify-content-end notice-btn">
+            <div className="d-flex justify-content-end notice-btn gap-2">
+                <button className="btn btn-primary notice-go-to-list-btn">수정</button>
+                <button className="btn btn-danger notice-go-to-list-btn">삭제</button>
                 <a className="btn btn-secondary notice-go-to-list-btn" href="/notice">목록</a>
             </div>
         </div>
