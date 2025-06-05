@@ -9,6 +9,7 @@ import ChatPage from './pages/ChatPage';
 import NoticePage from './pages/NoticePage';
 import NoticeDetailPage from './pages/NoticeDetailPage'
 import NoticeWritePage from './pages/NoticeWritePage';
+import NoticeEditPage from './pages/NoticeEditPage';
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/notice' element={<NoticePage/>}/>
         <Route path='/notice/detail/:id' element={<NoticeDetailPage/>}/>
         <Route path='/notice/write' element={<NoticeWritePage/>}/>
+        <Route path='/notice/edit/:id' element={<NoticeEditPage/>}/>
         <Route path='/chat' element={<ChatPage/>}/>
         <Route path='/sample' element={<SamplePage/>}/>
         <Route path='/Library' element={<LibraryPage />}/>

@@ -14,4 +14,6 @@ public interface NoticeRepository extends JpaRepository<Notice, Integer> {
 
     Notice findNoticeByNoticeId (int noticeId);
 
+    String deleteNoticeByNoticeId(int noticeId);
+
 }

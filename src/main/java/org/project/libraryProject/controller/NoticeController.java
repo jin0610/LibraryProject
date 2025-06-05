@@ -41,4 +41,16 @@ public class NoticeController {
         String result = noticeService.writeNotice(dto);
         return ResponseEntity.ok(result);
     }
+
+    @PostMapping("/edit")
+    public ResponseEntity<String> editNotice(@RequestBody NoticeWriteDTO dto, @RequestBody int noticeId){
+        String result = noticeService.editNotice(dto);
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/delete")
+    public ResponseEntity<String> deleteNotice(@RequestParam(value = "id") int noticeId){
+        String result = noticeService.deleteNotice(noticeId);
+        return ResponseEntity.ok(result);
+    }
 }

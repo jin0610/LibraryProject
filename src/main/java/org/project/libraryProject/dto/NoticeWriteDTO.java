@@ -13,6 +13,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class NoticeWriteDTO {
+    private int noticeId;
     private String title;
     private String content;
     private String writer;

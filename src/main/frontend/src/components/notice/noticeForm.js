@@ -56,7 +56,7 @@ const NoticeForm = (props) =>{
                                 {noticeList.map((notice, index) =>(
                                     <tr class="notice-table-row" key={index}>
                                         <td colSpan="1" class="align-middle border-top-0">
-                                            <div>{index + 1}</div>
+                                            <div>{((currentPage - 1) * 10) + (index + 1)}</div>
                                         </td>
                                         <td colSpan="4" class="align-middle border-top-0">
                                             <div className="pe-auto notice-title" value={notice.noticeId} onClick={e => onTitleClick(notice.noticeId, e)}>{notice.title}</div>

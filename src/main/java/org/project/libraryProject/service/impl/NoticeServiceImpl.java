@@ -62,4 +62,29 @@ public class NoticeServiceImpl implements NoticeService {
             return "FAIL";
         }
     }
+
+    @Override
+    public String editNotice(NoticeWriteDTO dto){
+        try{
+            Notice notice= dto.toEntity();
+//            noticeRepository.
+            return "SUCCESS";
+        } catch (Exception e){
+            logger.debug("수정 실패 : " + e.getMessage());
+            e.printStackTrace();
+            return "FAIL";
+        }
+    }
+
+    @Override
+    public String deleteNotice(int noticeId){
+        try{
+            noticeRepository.deleteById(noticeId);
+            return "SUCCESS";
+        } catch (Exception e){
+            logger.debug("삭제 실패 : " + e.getMessage());
+            e.printStackTrace();
+            return "FAIL";
+        }
+    }
 }

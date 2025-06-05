@@ -1,7 +1,7 @@
 import "./css/noticeDetailForm.css"
 
 const noticeDetailForm = (props)=>{
-    const {noticeContent} = props
+    // const {noticeContent} = props
     
     return(
         <div class="container my-5">
@@ -18,23 +18,23 @@ const noticeDetailForm = (props)=>{
             <div>
                 <div className="mb-5">
                     <h4>
-                        {noticeContent.title}
+                        {props.noticeContent.title}
                     </h4>
                 </div>
                 <div className="d-flex justify-content-start gap-5">
-                    <p className="pb-1 mb-1">{noticeContent.regDate}</p>
-                    <p className="pb-1 mb-1">{noticeContent.writer}</p>
+                    <p className="pb-1 mb-1">{props.noticeContent.regDate}</p>
+                    <p className="pb-1 mb-1">{props.noticeContent.writer}</p>
                     <p className="pb-1 mb-1">조회수 : 25</p>
                 </div>
             </div>
             <hr className="mb-4"/>
             <div className="notice-content">
-                {noticeContent.content}
+                {props.noticeContent.content}
             </div>
             <hr className="mb-4"/>
             <div className="d-flex justify-content-end notice-btn gap-2">
-                <button className="btn btn-primary notice-go-to-list-btn">수정</button>
-                <button className="btn btn-danger notice-go-to-list-btn">삭제</button>
+                <button className="btn btn-primary notice-go-to-list-btn" onClick={e => props.editNotice()}>수정</button>
+                <button className="btn btn-danger notice-go-to-list-btn" onClick={e => props.deleteNotice()}>삭제</button>
                 <a className="btn btn-secondary notice-go-to-list-btn" href="/notice">목록</a>
             </div>
         </div>

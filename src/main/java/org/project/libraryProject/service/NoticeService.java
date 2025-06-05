@@ -4,6 +4,7 @@ import org.project.libraryProject.dto.NoticeWriteDTO;
 import org.project.libraryProject.entity.Notice;
 import org.springframework.data.domain.Page;
 
+import javax.swing.plaf.PanelUI;
 import java.util.List;
 
 public interface NoticeService {
@@ -13,6 +14,10 @@ public interface NoticeService {
 
     Notice getNoticebyId(int noticeId);
 
-    public String writeNotice(NoticeWriteDTO dto);
+    String writeNotice(NoticeWriteDTO dto);
+
+    String editNotice(NoticeWriteDTO dto);
+
+    String deleteNotice(int noticeId);
 
 }

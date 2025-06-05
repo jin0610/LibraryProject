@@ -20,6 +20,7 @@ const NoticeDetailContainer = () =>{
         regDate : ""
     });
 
+    // 글 불러오기
     const getNoticeContent = (noticeId) =>{
         client.get(`/notice/detail?id=${noticeId}`)
         .then(res => {
@@ -31,18 +32,22 @@ const NoticeDetailContainer = () =>{
     }    
 
     // 공지사항 글 삭제
-    const deleteNotice = (noticeId) => {
+    const deleteNotice = () => {
         client.get(`/notice/delete?id=${noticeId}`)
         .then(res => {
             console.log(res.data)
+            alert('삭제되었습니다.')
+            navigate('/notice')
         }).catch(err => {
             console.log(err);
+            alert('삭제 실패.')
         })
     }
 
     // 공지사항 글 수정
-    const editNotice = (noticeId) =>{
-        navigate(`/notice/detail/${noticeId}`, {
+    const editNotice = () =>{
+        // console.log(noticeId)
+        navigate(`/notice/edit/${noticeId}`, {
             state: {
                 noticeId : noticeId
             }
@@ -57,6 +62,8 @@ const NoticeDetailContainer = () =>{
     return(
         <NoticeDetailForm
             noticeContent = {noticeContent}
+            editNotice ={editNotice}
+            deleteNotice = {deleteNotice}
         />        
     )
 }
