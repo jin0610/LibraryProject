@@ -1,5 +1,6 @@
 package org.project.libraryProject.repository;
 
+import org.project.libraryProject.dto.NoticeWriteDTO;
 import org.project.libraryProject.entity.Notice;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

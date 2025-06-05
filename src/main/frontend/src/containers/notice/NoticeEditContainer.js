@@ -13,7 +13,7 @@ const NoticeEditContainer = () =>{
     const noticeId = data ? data.noticeId : id
 
     const [formData, setFormData] = useState({
-        noticeId : "",
+        noticeId : noticeId,
         title : "",
         content : "",
         writer : "",
@@ -43,7 +43,7 @@ const NoticeEditContainer = () =>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // formData.regDate = new Date();
+        formData.regDate = new Date();
         if (formData.title.length <= 0){
             alert("제목을 입력해주세요.")
             return false
@@ -53,19 +53,18 @@ const NoticeEditContainer = () =>{
             alert("내용을 입력해주세요.")
             return false
         }
-        console.log("전송할 데이터:", formData);
-        // client.post('/notice/edit', formData)
-        // .then( res => {
-        //     // console.log(res)
-        //     if (res.data === 'SUCCESS'){
-        //         alert('글이 등록되었습니다.')
-        //         navigate('/notice');
-        //     } else{
-        //         alert('등록 실패하였습니다.')
-        //     }
-        // }).catch(err => {
-        //     console.log("error", err)
-        // })
+        client.post('/notice/edit', formData)
+        .then( res => {
+            // console.log(res)
+            if (res.data === 'SUCCESS'){
+                alert('글이 수정되었습니다.')
+                navigate('/notice');
+            } else{
+                alert('수정 실패하였습니다.')
+            }
+        }).catch(err => {
+            console.log("error", err)
+        })
     };
 
     const handleCancel = (e) => {

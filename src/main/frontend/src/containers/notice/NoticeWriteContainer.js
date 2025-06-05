@@ -7,6 +7,7 @@ import client from "../../client";
 const NoticeWriteContainer = () =>{
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
+        noticeId : null,
         title:"",
         content : "",
         writer : "user001",

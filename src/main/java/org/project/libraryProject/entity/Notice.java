@@ -34,7 +34,8 @@ public class Notice {
     private Date regDate;
 
     @Builder
-    public Notice(String title, String content, String writer, Date regDate){
+    public Notice(int noticeId, String title, String content, String writer, Date regDate){
+        this.noticeId = noticeId;
         this.title = title;
         this.content = content;
         this.writer = writer;

@@ -50,6 +50,7 @@ public class NoticeServiceImpl implements NoticeService {
         return noticeRepository.findNoticeByNoticeId(noticeId);
     }
 
+    // 공지사항 목록 추가
     @Override
     public String writeNotice(NoticeWriteDTO dto){
         try{
@@ -63,11 +64,12 @@ public class NoticeServiceImpl implements NoticeService {
         }
     }
 
+    // 공지사항 목록 수정
     @Override
     public String editNotice(NoticeWriteDTO dto){
         try{
             Notice notice= dto.toEntity();
-//            noticeRepository.
+            noticeRepository.save(notice);
             return "SUCCESS";
         } catch (Exception e){
             logger.debug("수정 실패 : " + e.getMessage());

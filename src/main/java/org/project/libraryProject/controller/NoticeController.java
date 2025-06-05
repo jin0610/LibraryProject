@@ -43,7 +43,8 @@ public class NoticeController {
     }
 
     @PostMapping("/edit")
-    public ResponseEntity<String> editNotice(@RequestBody NoticeWriteDTO dto, @RequestBody int noticeId){
+    public ResponseEntity<String> editNotice(@RequestBody NoticeWriteDTO dto){
+        System.out.println(dto);
         String result = noticeService.editNotice(dto);
         return ResponseEntity.ok(result);
     }

@@ -21,6 +21,7 @@ public class NoticeWriteDTO {
 
     public Notice toEntity(){
         return Notice.builder()
+                .noticeId(noticeId)
                 .title(title)
                 .content(content)
                 .writer(writer)
