@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -30,11 +31,11 @@ public class Notice {
     private String writer;
 
     @Column(name="reg_date", nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    private Date regDate;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime regDate;
 
     @Builder
-    public Notice(int noticeId, String title, String content, String writer, Date regDate){
+    public Notice(int noticeId, String title, String content, String writer, LocalDateTime regDate){
         this.noticeId = noticeId;
         this.title = title;
         this.content = content;

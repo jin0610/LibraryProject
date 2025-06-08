@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.project.libraryProject.entity.Notice;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -17,7 +18,7 @@ public class NoticeWriteDTO {
     private String title;
     private String content;
     private String writer;
-    private Date regDate;
+    private LocalDateTime regDate;
 
     public Notice toEntity(){
         return Notice.builder()
