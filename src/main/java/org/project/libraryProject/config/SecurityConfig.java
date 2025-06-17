@@ -7,23 +7,28 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
         http
-                .authorizeRequests()
-                .mvcMatchers("/login").permitAll()
-                .and()
+            .csrf().disable()
+            .authorizeRequests()
+                .mvcMatchers("/login", "/auth/login", "/auth/register").permitAll()
+                .anyRequest().authenticated()
+            .and()
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/", true)
                 .permitAll();
 
-        // 로그아웃, 회원 역할(관리자, 사용자) 등 추가
+        // Register JWT auth filter (e.g. jwtAuthenticationFilter)
+        // DB에서 사용자 조회, 비밀번호 검사 (PasswordEncoder 사용)
+        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
