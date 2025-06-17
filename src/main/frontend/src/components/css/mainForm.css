@@ -1,156 +1,81 @@
-
-
-/* 책바다 책이음 정보 */
-.info-box {
-    border: 1px solid #007bff;
-    padding: 20px;
-    border-radius: 8px;
-    background: #e9f7fc;
-    text-align: center;
-    flex: 1;
-}
-
-.info-box h3 {
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.info-box p {
-    color: #333;
-}
-
-.info-btn {
-    margin-top: 10px;
-}
-/* 책바다 책이음 정보 끝*/
-/* 오른쪽 회색 버튼 스타일 */
-.right-buttons .btn-gray {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    width: 100%;
-    text-align: center;
-}
-
-.right-buttons .btn-gray:hover {
-    background-color: #ddd;
-    color: #000;
-}
-
-/* flexbox 스타일 */
-.d-flex {
+.nav-sub {
+    align-items: center;
     display: flex;
-    justify-content: space-between;
+    margin: 10px auto;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
 }
 
-
-/* 인기 순위 */
-.bestmain{
+.ranking{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 4%;
 }
-
-/* nav바 */
-.nav-container{
-    justify-content: center; /*nav바 가운데로*/
-    /*border: solid 1px red;*/
+.main_service{
+   padding-top: 3%;
+   text-align: center;
+}
+.main_service_ptag{
+    font-weight: bold;
+}
+/* 부모를 완전히 가운데 정렬 */
+.main_service_centered {
     display: flex;
+    flex-direction: column;
+    align-items: center; /* 수평 가운데 */
+    justify-content: center; /* 수직 가운데 (필요한 경우) */
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* 버튼들을 가운데 정렬된 flex row로 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.main_service {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center children horizontally */
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Horizontal layout for buttons */
+.button-group {
+    display: flex;
+    justify-content: center;  /* center the button group inside main_service */
+    gap: 32px;
+    flex-wrap: wrap; /* responsive: wrap buttons if too narrow */
+    margin-top: 20px;
+}
+
+
+.service-button {
+    display: inline-block;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    border-bottom: 1px solid #eee;
+    gap: 8px;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-
-.nav-menu{
-    flex-direction: row;
-    display: flex;
-    gap: 60px;
-    list-style: none;
-    padding: 10px 50px;
-    margin: 0;
+.service-button:hover {
+    background-color: #e0e0e0;
 }
 
-
-.nav-menu li a {
-    text-decoration: none; /*언더라인 제거*/
-    color: #444;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-
-
-.nav-menu li a:hover{
-    color: #1ea10e;
-}
-
-
-/* 드롭다운 */
-.nav-menu li.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top:100%;
-    left : 0;
-    background-color: lightgray;
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.dropdown-menu li {
-    padding: 8px 20px;
-}
-
-.dropdown-menu li a {
-    color: #444;
-    padding : 5px 10px;
-    display: block;
-}
-#navbar-dark-example {
-    background-color: white;
-    border-color: white;
-    color:black;
-    toggle-group : none;
-}
-
-
-.dropdown-menu li a:hover {
-    background-color: #ddd;
-}
-
-
-@media (max-width: 768px) {
-    .bestmain{
-        font-size: 12px;
-    }
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav-menu{
-        flex-direction: column;
-        gap:10px;
-    }
-    .nav-menu li a {
-        font-size: 12px;
-        white-space: nowrap; /*줄 바꿈 방지*/
-        display: inline-block;
-    }
-    .nav-menu li{
-        width: 100%;
-    }
-
-    .menu-button {
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-    }
+.icon {
+    font-size: 26px;
 }
