@@ -1,21 +1,13 @@
 import "./css/mainForm.css";
-import React, {useState} from "react";
-import { Button, Row, Col } from "react-bootstrap";
-import {Link} from "react-router-dom"; // 부트스트랩 사용
-
-
+import Header from "./header";
+import React from "react";
+import { FaBook, FaInfoCircle, FaCalendarAlt, FaExchangeAlt } from 'react-icons/fa';
 
 const MainForm = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const toggleDropdown  = () => {
-        setIsDropdownOpen(prevState => !prevState); // 드롭다운 열고 닫기
-    };
-
-
     return (
         <div>
-            {/* 검색 섹션 시작 */}
+            <Header/>
+            {/* 검색 섹션 */}
             <div className="section section1" id="section1">
                 <div className="container searchbox">
                     <div className="searchgroup input-group">
@@ -30,111 +22,227 @@ const MainForm = () => {
               </button>
             </span>
                         {/* 검색 섹션 끝 */}
-            <div className="bestmain"> 인기 검색어 🔽</div>{/*나중에 api로 띄울 거*/}
+                        <div className="ranking"> 인기 검색어 🔽</div>
+                        {/*나중에 api로 띄울 거*/}
                     </div>
-            </div>
+                </div>
 
-            {/*드롭다운*/}
-                <nav className="nav-container">
 
-                    <ul className="nav-menu">
-                        <li className="dropdown">
-
-                            <a href="/" className="information" onClick={toggleDropdown}>도서관 안내</a>
-                            {isDropdownOpen && (
+                {/* 검색 섹션 끝 */}
+                {/* 네비게이션 */}
+                <div className="nav-sub">
+                    <nav className="navbar navbar-expand-lg">
+                        {/* 도서관 안내 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-dark-link-hover-color dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                도서관 안내
+                            </button>
                             <ul className="dropdown-menu">
-                                <li><Link to="">도서관 소개</Link></li>
-                                <li><Link to="/">결제/환불 안내</Link></li>
-                                <li><Link to="/">자주 묻는 질문</Link></li>
-                                <li><Link to="/">문의하기</Link></li>
+                                <li><a className="dropdown-item" href="#">도서관 소개</a></li>
+                                <li><a className="dropdown-item" href="#">이용안내</a></li>
+                                <li><a className="dropdown-item" href="#">자주 묻는 질문</a></li>
                             </ul>
-                            )}
-                        </li>
-                        <li><a href="/">자료검색</a></li>
-                        <li><a href="/">추천도서</a></li>
-                        <li><a href="/">신상도서</a></li>
-                        <li><a href="/">중고서점</a></li>
-                        <li><a href="/">행사</a></li>
-                        <li><a href="/">나의 공간</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            {/* 배너 섹션 */}
-            <div className="section section2" id="section2">
-                <section className="banner">
-                    <div className="container title">
-                        <div className="p-3 text-center">
-                            <h1 className="banner-title">Sample Homepage</h1>
                         </div>
-                    </div>
-                </section>
 
-                {/* 서비스 섹션 */}
-                <div className="services">
-                    <div className="service">
-                        <p>대출/예약</p>
+                        {/* 자료 검색 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                자료 검색
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">도서 검색</a></li>
+                                <li><a className="dropdown-item" href="#">전자책 검색</a></li>
+                                <li><a className="dropdown-item" href="#">DVD / 비도서 자료</a></li>
+                            </ul>
+                        </div>
+
+                        {/* 추천 도서 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                추천 도서
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">사서 추천</a></li>
+                                <li><a className="dropdown-item" href="#">이용자 리뷰 TOP</a></li>
+                                <li><a className="dropdown-item" href="#">연령별 추천</a></li>
+                            </ul>
+                        </div>
+
+                        {/* 신상도서 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                신상 도서
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">이번주 입고</a></li>
+                                <li><a className="dropdown-item" href="#">이 달의 신간</a></li>
+                                <li><a className="dropdown-item" href="#">예약 인기 도서</a></li>
+                            </ul>
+                        </div>
+
+                        {/* 중고서점 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                중고 서점
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">중고 도서 구매</a></li>
+                                <li><a className="dropdown-item" href="#">중고 도서 판매</a></li>
+                                <li><a className="dropdown-item" href="#">중고 인기 순위</a></li>
+                            </ul>
+                        </div>
+
+                        {/* 행사 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                행사
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">진행 중 이벤트</a></li>
+                                <li><a className="dropdown-item" href="#">예정 프로그램</a></li>
+                                <li><a className="dropdown-item" href="#">도서관 프로그램</a></li>
+                            </ul>
+                        </div>
+
+                        {/* 나의 공간 */}
+                        <div className="dropdown me-4">
+                            <button
+                                className="btn dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                나의 공간
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li><a className="dropdown-item" href="#">대출 현황</a></li>
+                                <li><a className="dropdown-item" href="#">예약도서</a></li>
+                                <li><a className="dropdown-item" href="#">내 서재</a></li>
+                                <li><a className="dropdown-item" href="#">회원정보 수정</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                {/* 네비게이션 끝 */}
+                {/* 배너 섹션 */}
+                <div className="section section2" id="section2">
+                    <section className="banner">
+                        <div className="container title">
+                            <div className="p-3 text-center">
+                                <h1 className="banner-title">Sample Homepage</h1>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            <div className="down">
+                <div className="main_service">
+                    <p className="main_service_ptag">주요 서비스 바로가기</p>
+
+                    <div className="main_item_service">
+                    <button className="service-button">
+                        <FaBook className="icon"/>
+                        <span>대출/예약</span>
+                    </button>
+
+                        <button className="service-button">
+                            <FaInfoCircle className="icon"/>
+                            <span> 이용안내</span>
+                        </button>
+
+                        <button className="service-button">
+                            <FaCalendarAlt className="icon"/>
+                            <span>  프로그램 <br/>예약</span>
+                        </button>
+
+                        <button className="service-button">
+                            <FaExchangeAlt className="icon"/>
+                            <span> 중고거래</span>
+                        </button>
                     </div>
-                    <div className="service">
-                        <p>이용안내</p>
-                    </div>
-                    <div className="service">
-                        <p>프로그램 예약</p>
-                    </div>
-                    <div className="service">
-                        <p>중고거래</p>
+                </div>
+            <div className="s_service">
+                <div className="public_user_service">
+                    <p className="public_user_service_ptag ">공공도서관 이용자 서비스</p>
+                </div>
+                <div className="notice_program_total_new_lib ">
+                    <ul className="justify-content-end nav nav-tabs" id="myTab" role="tablist">
+                        <li className="nav-item" role="presentation">
+                            <button className="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#home-tab-pane" type="button" role="tab"
+                                    aria-controls="home-tab-pane" aria-selected="true">Home
+                            </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button className="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                    aria-controls="profile-tab-pane" aria-selected="false">Profile
+                            </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button className="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                    aria-controls="contact-tab-pane" aria-selected="false">Contact
+                            </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button className="nav-link" id="disabled-tab" data-bs-toggle="tab"
+                                    data-bs-target="#disabled-tab-pane" type="button" role="tab"
+                                    aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled
+                            </button>
+                        </li>
+                    </ul>
+                    <div className="tab-content" id="myTabContent">
+                        <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                             aria-labelledby="home-tab" tabIndex="0">dfsfsdf
+                        </div>
+                        <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                             aria-labelledby="profile-tab" tabIndex="0">...
+                        </div>
+                        <div className="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                             aria-labelledby="contact-tab" tabIndex="0">...
+                        </div>
+                        <div className="tab-pane fade" id="disabled-tab-pane" role="tabpanel"
+                             aria-labelledby="disabled-tab" tabIndex="0">...
+                        </div>
                     </div>
                 </div>
             </div>
-
-            {/* 정보 박스 섹션 */}
-            <div className="container mt-4">
-                <Row className="mb-4">
-                    {/* 왼쪽에 책바다, 책이음 정보 박스 */}
-                    <Col md={8} className="d-flex flex-row">
-                        <div className="info-box bookada">
-                            <h3>책바다</h3>
-                            <p>안녕하세요. 여기에 책바다 정보가 들어갑니다.</p>
-                            <p>책바다 참여도서관: 1,307개</p>
-                            <Button variant="primary" className="info-btn">
-                                도서관 한방에 보기
-                            </Button>
-                        </div>
-
-                        <div className="info-box bookiem ml-4">
-                            <h3>책이음</h3>
-                            <p>여기에 책이음 정보가 들어갑니다.</p>
-                            <p>책이음 참여도서관: 2,721개</p>
-                            <Button variant="primary" className="info-btn">
-                                도서관 한방에 보기
-                            </Button>
-                        </div>
-                    </Col>
-
-                    {/* 오른쪽에 회색 버튼 */}
-                    <Col md={4}>
-                        <div className="right-buttons">
-                            {/* 공지사항 버튼을 Link로 변경하여 페이지 이동 */}
-                            <Link to="/notice">
-                                <Button variant="secondary" className="btn-gray mb-2">
-                                    공지사항
-                                </Button>
-                            </Link>
-                            <Button variant="secondary" className="btn-gray mb-2">
-                                프로그램 신청
-                            </Button>
-                            <Button variant="secondary" className="btn-gray mb-2">
-                                도서관 이용 통계
-                            </Button>
-                            <Button variant="secondary" className="btn-gray mb-2">
-                                추천/신상 도서
-                            </Button>
-                        </div>
-                    </Col>
-                </Row>
-            </div>
         </div>
-    );
+</div>
+)
+    ;
 };
 
 export default MainForm;
