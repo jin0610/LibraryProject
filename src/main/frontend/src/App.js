@@ -9,21 +9,27 @@ import BookListPage from "./pages/BookListPage";
 import ChatPage from './pages/ChatPage';
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='/notice' element={<NoticePage/>}/>
-        <Route path='/chat' element={<ChatPage/>}/>
-        <Route path='/sample' element={<SamplePage/>}/>
-        <Route path='/Library' element={<LibraryPage />}/>
-        <Route path='/books' element={<BookListPage/>}/>
-        <Route path='/Library' element={<LibraryPage />}/>
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/auth/login' element={<LoginPage/>}/>
+        {/* 로그인 필요 X */}
+          <Route path='/auth/login' element={<LoginPage/>}/>
+          <Route path='/' element={<MainPage/>}/>
+          <Route path='/books' element={<BookListPage/>}/>
+          <Route path='/register' element={<RegisterPage/>}/>
+          <Route path='/notice' element={<NoticePage/>}/>
+          <Route path='/chat' element={<ChatPage/>}/>
+          <Route path='/sample' element={<SamplePage/>}/>
+          <Route path='/Library' element={<LibraryPage />}/>
+
+        {/* 로그인 필요 O */}
+        <Route element={<ProtectedRoute />}>
+
+        </Route>
       </Routes>
     </BrowserRouter>
   )

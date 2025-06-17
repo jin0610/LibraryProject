@@ -19,9 +19,10 @@ public class CustomUserDetails implements UserDetails {
         this.user = user;
     }
 
-    // 권한 정보 반환
+    // Return authority information
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // User 엔티티의 권한 정보를 GrantedAuthority 리스트로 변환해서 반환 (e.g. ROLE_USER, ROLE_ADMIN)
         String roleName;
 
         switch (user.getUserLevel()) {
