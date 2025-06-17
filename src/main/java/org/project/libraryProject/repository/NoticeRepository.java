@@ -1,5 +1,6 @@
 package org.project.libraryProject.repository;
 
+import org.project.libraryProject.dto.NoticeWriteDTO;
 import org.project.libraryProject.entity.Notice;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,4 +12,9 @@ import java.util.List;
 @Repository
 public interface NoticeRepository extends JpaRepository<Notice, Integer> {
     Page<Notice> findAll(Pageable pageable);
+
+    Notice findNoticeByNoticeId (int noticeId);
+
+    String deleteNoticeByNoticeId(int noticeId);
+
 }

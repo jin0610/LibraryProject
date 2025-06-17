@@ -1,22 +1,38 @@
-import NoticeWriteForm from "../../components/notice/noticeWriteForm";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import moment from 'moment';
+import { useEffect, useState } from "react";
+import NoticeDetailContainer from "./NoticeDetailContainer"
 import client from "../../client";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import NoticeWriteForm from "../../components/notice/noticeWriteForm";
 
-const NoticeWriteContainer = () =>{
+const NoticeEditContainer = () =>{
     const navigate = useNavigate();
+    const location = useLocation()
+    const data = {...location.state};
+    let {id} = useParams();
+    
+    const noticeId = data ? data.noticeId : id
+
     const [formData, setFormData] = useState({
-        noticeId : null,
-        title:"",
+        noticeId : noticeId,
+        title : "",
         content : "",
-        writer : "user001",
-        regDate : "",
+        writer : "",
+        regDate : ""
         // files : [null,null,null,null,null]
     });
-    const regDateFormat = (date) =>{
-        return moment(date).format('YYYY-MM-DD hh:mm:ss')
-    }
+
+    // 글 불러오기
+    const getNoticeContent = (noticeId) =>{
+        client.get(`/notice/detail?id=${noticeId}`)
+        .then(res => {
+            console.log(res.data)
+            setFormData(res.data)
+        }).catch(err => {
+            console.log("error", err)
+        })
+    }    
+
+
     const handleChange = (e) => {
         const {id, value}= e.target;
         setFormData((prev) => ({
@@ -37,15 +53,14 @@ const NoticeWriteContainer = () =>{
             alert("내용을 입력해주세요.")
             return false
         }
-        // console.log("전송할 데이터:", formData);
-        client.post('/notice/write', formData)
+        client.post('/notice/edit', formData)
         .then( res => {
             // console.log(res)
             if (res.data === 'SUCCESS'){
-                alert('글이 등록되었습니다.')
+                alert('글이 수정되었습니다.')
                 navigate('/notice');
             } else{
-                alert('등록 실패하였습니다.')
+                alert('수정 실패하였습니다.')
             }
         }).catch(err => {
             console.log("error", err)
@@ -53,9 +68,19 @@ const NoticeWriteContainer = () =>{
     };
 
     const handleCancel = (e) => {
-        navigate('/notice');
+        navigate(`/notice/detail/${noticeId}`,{
+            state:{
+                noticeId : noticeId
+            }
+        });
         console.log("취소")
     }
+
+    useEffect(()=>{
+        console.log("useEffect")
+        getNoticeContent(noticeId)
+    },[noticeId])
+
     return(
         <NoticeWriteForm
             formData = {formData}
@@ -66,4 +91,4 @@ const NoticeWriteContainer = () =>{
     )
 }
 
-export default NoticeWriteContainer;
+export default NoticeEditContainer;

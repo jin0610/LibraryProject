@@ -34,6 +34,10 @@
     border-bottom-width: 1px;
 }
 
+.notice-title{
+    cursor: pointer;
+}
+
 /* pagination */
 .pagination{
     justify-content: center;
