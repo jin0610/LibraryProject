@@ -172,6 +172,7 @@ const MainForm = () => {
 
                     <div className="main_item_service">
                     <button className="service-button">
+                        {/* <i class="bi bi-book"></i> */}
                         <FaBook className="icon"/>
                         <span>대출/예약</span>
                     </button>
