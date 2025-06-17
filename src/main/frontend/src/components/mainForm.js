@@ -173,23 +173,23 @@ const MainForm = () => {
                     <div className="main_item_service">
                     <button className="service-button">
                         <FaBook className="icon"/>
-                        대출/예약
+                        <span>대출/예약</span>
                     </button>
 
-                    <button className="service-button">
-                        <FaInfoCircle className="icon"/>
-                        이용안내
-                    </button>
+                        <button className="service-button">
+                            <FaInfoCircle className="icon"/>
+                            <span> 이용안내</span>
+                        </button>
 
-                    <button className="service-button">
-                        <FaCalendarAlt className="icon"/>
-                        프로그램 예약
-                    </button>
+                        <button className="service-button">
+                            <FaCalendarAlt className="icon"/>
+                            <span>  프로그램 <br/>예약</span>
+                        </button>
 
-                    <button className="service-button">
-                        <FaExchangeAlt className="icon"/>
-                        중고거래
-                    </button>
+                        <button className="service-button">
+                            <FaExchangeAlt className="icon"/>
+                            <span> 중고거래</span>
+                        </button>
                     </div>
                 </div>
             <div className="s_service">
