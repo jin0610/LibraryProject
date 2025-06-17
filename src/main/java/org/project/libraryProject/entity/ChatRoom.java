@@ -1,10 +1,7 @@
 package org.project.libraryProject.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -34,4 +31,12 @@ public class ChatRoom {
     @Column(name = "reg_date", nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime regDate;
+
+    @Builder
+    public ChatRoom(int roomId, int bookId, int buyerId, LocalDateTime regDate){
+        this.roomId = roomId;
+        this.bookId = bookId;
+        this.buyerId = buyerId;
+        this.regDate = regDate;
+    }
 }
